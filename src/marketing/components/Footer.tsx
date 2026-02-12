@@ -81,7 +81,7 @@ export function Footer() {
           <div className={styles.footerCol}>
             <h4 className={styles.footerColTitle}>Resources</h4>
             <ul className={styles.footerLinks}>
-              <li><a href="#use-cases">Use Cases</a></li>
+              <li><a href="#/use-cases">Use Cases</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>

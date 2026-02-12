@@ -1,0 +1,125 @@
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.heading {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+}
+
+.subhead {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.card {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.card:hover {
+  border-color: var(--border-card);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cardHeader {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(250, 51, 86, 0.1);
+  color: var(--brand);
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.cardContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.listItem {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.listItem::before {
+  content: '▪';
+  flex-shrink: 0;
+  color: var(--brand);
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .cardContent {
+    grid-template-columns: 1fr;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iconWrap {
+    width: 40px;
+    height: 40px;
+  }
+}

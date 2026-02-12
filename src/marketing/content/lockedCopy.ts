@@ -16,10 +16,10 @@ export const copy = {
   },
 
   problem: {
-    headline: 'The system breaks when your work lives in five tools.',
+    headline: 'The problem with your current stack',
     body: `Plans in slides. Budgets in spreadsheets. Decisions in chat.
 Tasks in Asana. Files in Drive.
-Nothing connects — which means the project never actually stays aligned.
+By the time work reaches execution, context is already gone.
 Memry exists because production work is not a set of documents.
 It's a single operational system.
 Every change should ripple across the whole workflow instantly.`,
@@ -135,7 +135,7 @@ Access is currently limited while we onboard teams directly.`,
 export const ui = {
   navChip: 'v1.0',
   problemSupport:
-    'Nothing connects — which means the project never actually stays aligned.',
+    'By the time work reaches execution, context is already gone.',
   featureGridHeading: 'Built for the way you actually work',
   comparisonHeading: 'Why Memry instead of the usual stack?',
   workflowLabel: 'Case Study',
@@ -143,6 +143,8 @@ export const ui = {
   ctaHeadline: 'Replace chaos with a single source of truth.',
   contactSales: 'Contact Sales',
   footerTagline: 'The shared brain for production teams.',
+  useCasesHeadline: 'Use Cases',
+  useCasesSubhead: 'Memry is built for the people who make things happen.',
 } as const;
 
 // ── Data arrays ───────────────────────────────────────────
@@ -150,18 +152,19 @@ export const ui = {
 export const problemCards = [
   {
     title: 'Fragmented Tools',
-    description:
-      'Plans in slides, budgets in spreadsheets, decisions in chat. Nothing connects.',
+    description: `Decks in one place, budgets in another,
+tasks somewhere else. Your team wastes
+hours switching contexts.`,
   },
   {
     title: 'Version Chaos',
-    description:
-      'No overwriting protection, no version control. "final_v7" is the norm.',
+    description: '"final_final_v3.pptx" - Sound familiar? No single source of confusion means endless cpnfusion.',
   },
   {
     title: 'No Connected Workflow',
-    description:
-      'When scope changes, nothing else updates. The project drifts apart.',
+    description: `Tasks aren't linked to budget lines.
+Calendar doesn't know about deadlines.
+Payments happen in the dark.`,
   },
 ];
 
@@ -339,6 +342,79 @@ export const roleCardsData = [
       'Clear tasks, files, and handoffs without chaos',
       'Status workflow with audit trails',
       'In-context file attachments everywhere',
+    ],
+  },
+];
+
+export const useCases = [
+  {
+    title: 'Event Production Teams',
+    description: 'Teams of 5-50 managing $50K–$5M projects',
+    icon: 'briefcase',
+    painPoints: [
+      'Scattered budgets across spreadsheets',
+      'No link between vendor costs and tasks',
+      'Version chaos in client presentations',
+    ],
+    keyWorkflows: [
+      'Spellbook → auto-generate budget + tasks + schedule',
+      'HQ Ledger → reconcile tank spend against project budgets',
+    ],
+  },
+  {
+    title: 'Design-Ops / Creative Agencies',
+    description: 'Creative teams managing deliverables, vendors, and client reviews',
+    icon: 'palette',
+    painPoints: [
+      'Decks live outside the production workflow',
+      'No financial visibility for creative leads',
+      'Manual export and delivery processes',
+    ],
+    keyWorkflows: [
+      'Slide decks → real-time co-authoring + preview versions',
+      'Files & Delivery → CDN-powered asset delivery with ZIP export',
+    ],
+  },
+  {
+    title: 'Producers / Project Leads',
+    description: 'Project owners responsible for scope, budget, and timeline',
+    icon: 'target',
+    painPoints: [
+      'No dashboard connecting budget to schedule to spend',
+      'Status updates require chasing team members',
+      'Margin visibility only at month-end',
+    ],
+    keyWorkflows: [
+      'Project Hub → single view of slides, budget, tasks, calendar',
+      'Task Workflows → structured review stages with audit trails',
+    ],
+  },
+  {
+    title: 'Builders / Production Crews',
+    description: 'On-the-ground crew executing tasks and deliverables',
+    icon: 'hammer',
+    painPoints: [
+      'Unclear task priorities and dependencies',
+      'No mobile-friendly task view',
+      "Can't see how their work connects to the budget",
+    ],
+    keyWorkflows: [
+      'Tasks → clear assignments linked to budget lines and calendar',
+      'Calendar → focus blocks synced to crew schedules',
+    ],
+  },
+  {
+    title: 'Client Stakeholders',
+    description: 'Clients reviewing decks and approving deliverables',
+    icon: 'eye',
+    painPoints: [
+      'Receiving outdated versions via email',
+      'No single link for project status',
+      'Manual approval via email threads',
+    ],
+    keyWorkflows: [
+      'Deck Versioning → client-default version with controlled access',
+      'Files & Delivery → organized file delivery via CDN links',
     ],
   },
 ];

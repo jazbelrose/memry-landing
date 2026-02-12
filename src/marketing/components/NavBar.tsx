@@ -6,7 +6,7 @@ import styles from './NavBar.module.css';
 export function NavBar() {
   const navigationLinks = [
     { label: 'Product', href: '#product' },
-    { label: 'Use Cases', href: '#use-cases' },
+    { label: 'Use Cases', href: '#/use-cases' },
     { label: 'Security', href: '#security' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Release Notes', href: '#release-notes' },
