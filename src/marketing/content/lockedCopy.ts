@@ -145,11 +145,16 @@ export const ui = {
   footerTagline: 'The shared brain for production teams.',
   useCasesHeadline: 'Use Cases',
   useCasesSubhead: 'Memry is built for the people who make things happen.',
-  productHeadline: 'Product',
+  productHeadline: 'Features',
   productSubhead: 'A complete production management platform. Here\'s what\'s inside.',
   securityHeadline: 'Security you can trust',
   securitySubhead: 'Your production data, budgets, and files are protected by design.',
   securityChecklistTitle: 'Security Practices Checklist',
+  faqHeadline: 'Frequently Asked Questions',
+  faqSubhead: 'Answers to your questions. No fluff.',
+  releaseHeadline: 'Release Notes — V1.0',
+  releaseSubhead: 'Everything included in the initial release of Memry.',
+  releaseDate: 'February 2026',
 } as const;
 
 // ── Data arrays ───────────────────────────────────────────
@@ -211,40 +216,40 @@ export const tabsData = [
 
 export const featureCards = [
   {
-    icon: 'spellbook',
-    title: 'Spellbooks',
+    icon: 'presentation',
+    title: 'Slide Decks',
     description:
-      'Generate structured outputs — budgets, task maps, schedules — from proven production templates.',
+      'Create stunning client decks with real-time collaboration, Magic Layouts, and one-click PDF export. Version control built in.',
   },
   {
-    icon: 'slides',
-    title: 'Version-Controlled Decks',
+    icon: 'calculator',
+    title: 'Smart Budgets',
     description:
-      'Multi-slide editor with real-time collaboration. No overwriting. No "final_v7."',
+      'One click creates budget lines, tasks, and calendar blocks. Three cost types, invoice lump-summing, and bank-data reconciliation.',
   },
   {
-    icon: 'budget',
-    title: 'Live Budgets',
+    icon: 'checksquare',
+    title: 'Task Workflows',
     description:
-      'Cost, markup, and client price stay visible. Margin recalculates as spend comes in.',
+      'Assign, review, approve. Structured status transitions with audit trails keep every team member accountable.',
   },
   {
-    icon: 'tasks',
-    title: 'Production Tasks',
+    icon: 'calendardays',
+    title: 'Project Calendar',
     description:
-      'Assigned owners, status workflows, and dependencies tied to budget scope.',
+      'Schedule events, focus blocks, and milestones. ICS feed export keeps everyone synced.',
   },
   {
-    icon: 'files',
-    title: 'Project File Storage',
+    icon: 'bookopen',
+    title: 'HQ Ledger',
     description:
-      'Team uploads, vendor files, client exports, and delivery links — all in context.',
+      'Import bank transactions, auto-categorize, detect recurring costs, and allocate spend to budget lines across all projects.',
   },
   {
-    icon: 'connect',
-    title: 'Connected System',
+    icon: 'folderup',
+    title: 'Files & Delivery',
     description:
-      'When the budget changes, the task plan updates. One system. Real-time. No tool-switching.',
+      'Upload, organize, and deliver files via CDN. Soft delete with 30-day restore. ZIP downloads for bulk delivery.',
   },
 ];
 
@@ -538,5 +543,119 @@ export const productBenefits = [
   {
     feature: 'PDF Export',
     benefit: 'Client-ready, high-fidelity PDFs in one click.',
+  },
+];
+
+export const faqItems = [
+  {
+    question: 'Is collaboration real-time?',
+    answer: 'Yes. Memry uses Yjs CRDT over WebSocket for conflict-free simultaneous editing on slides.',
+  },
+  {
+    question: 'How does file security work?',
+    answer: 'All files served via CloudFront CDN. Secure assets use signed URLs with expiration. Soft delete with 30-day retention before permanent removal.',
+  },
+  {
+    question: 'Can clients view decks?',
+    answer: 'Yes. Deck versioning supports `isClientDefault` — clients see only the version you approve for them. Role-based access controls what each user sees.',
+  },
+  {
+    question: 'What export formats are available?',
+    answer: 'PDF (slide decks, invoices), CSV (HQ transactions, budgets), ICS (calendar), ZIP (bulk file download).',
+  },
+  {
+    question: 'Is there a mobile experience?',
+    answer: 'Memry is a PWA with service worker caching. Mobile users get a read-only slide viewer and adapted task/budget views. Full editing is desktop-optimized.',
+  },
+  {
+    question: 'How is authentication handled?',
+    answer: 'AWS Cognito with JWT tokens. WebSocket auth uses the `Sec-WebSocket-Protocol` header — never query strings.',
+  },
+  {
+    question: 'Is there an API?',
+    answer: 'V1 is internal API only. A public API is on the roadmap.',
+  },
+  {
+    question: 'What about offline support?',
+    answer: 'Yjs uses IndexedDB for offline persistence. The PWA caches API responses and CDN assets. Full offline editing is limited to slides with cached Yjs docs.',
+  },
+  {
+    question: 'Is pricing available?',
+    answer: 'Pricing is not finalized for V1. The platform is designed for per-org billing; Stripe integration is on the 60–90 day roadmap.',
+  },
+];
+
+export const releaseNotesSection = [
+  {
+    title: 'Slides & Collaboration',
+    features: [
+      'Multi-slide deck editor with Lexical rich text engine',
+      'Real-time collaboration via Yjs CRDT (per-slide rooms)',
+      'Magic Layout engine with scoring/taste modes plus shuffle/regenerate to try new looks fast',
+      'Picture Frame nodes (drag-drop images, crop, radius, border)',
+      'Deck versioning: draft/approved/archived snapshots',
+      'Comments with pin locations, threads, and resolve/reopen',
+      'Speaker notes per slide',
+      'Presentation mode (full-screen)',
+      'Mobile slide viewer (read-only)',
+      'PDF export with quality presets',
+    ],
+  },
+  {
+    title: 'Budget & Finance',
+    features: [
+      'Budget headers with revisions',
+      'Line items with quantity, cost, markup, final cost',
+      'Spellbook: natural-language prompt → auto budget lines + tasks/focus blocks + invoice draft in under 60s',
+      'Live multi-user budget editing (presence, lockstep updates)',
+      'Invoice preview and PDF generation',
+      'Budget-to-task linking',
+      'HQ Financial Ledger: accounts, CSV import, auto-categorization',
+      'Recurring transaction detection and rules',
+      'Budget-to-transaction allocation',
+      'Financial reports and export (CSV, bundle)',
+    ],
+  },
+  {
+    title: 'Tasks & Calendar',
+    features: [
+      'Task CRUD with bulk create/patch',
+      'Review workflow: submit → review → approve/request changes → done',
+      'Focus blocks (grouped child tasks)',
+      'Project calendar with events and time blocks',
+      'ICS calendar feed export',
+      'Global task map and drawer',
+    ],
+  },
+  {
+    title: 'Messaging & Notifications',
+    features: [
+      'DMs with canonical conversation IDs',
+      'Project threads',
+      'Reactions, edits, file attachments',
+      'Smart notifications with deduplication and batching',
+      'Global notification drawer',
+    ],
+  },
+  {
+    title: 'Files & Storage',
+    features: [
+      'CDN-first delivery via CloudFront',
+      'File lifecycle: upload → active → soft delete → hard delete (30d TTL)',
+      'Reference tracking across slides, tasks, budget items',
+      'Inline rename, batch operations',
+      'ZIP download',
+    ],
+  },
+  {
+    title: 'Platform',
+    features: [
+      'AWS Cognito authentication with JWT',
+      'Role-based access: admin, designer, builder, vendor, client',
+      'Organization multi-tenancy',
+      'WebSocket real-time events',
+      'PWA with service worker caching',
+      'Global search across projects and messages',
+    ],
   },
 ];

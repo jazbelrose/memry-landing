@@ -5,11 +5,11 @@ import styles from './NavBar.module.css';
 
 export function NavBar() {
   const navigationLinks = [
-    { label: 'Product', href: '#/product' },
+    { label: 'Features', href: '#/features' },
     { label: 'Use Cases', href: '#/use-cases' },
     { label: 'Security', href: '#/security' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Release Notes', href: '#release-notes' },
+    { label: 'FAQ', href: '#/faq' },
+    { label: 'Release Notes', href: '#/release-notes' },
   ];
 
   return (
@@ -36,7 +36,11 @@ export function NavBar() {
             </a>
           ))}
         </div>
-        <Button variant="primary" ariaLabel="Request Access">
+        <Button 
+          variant="primary" 
+          ariaLabel="Request Access"
+          onClick={() => { window.location.hash = '/request-access'; }}
+        >
           {copy.hero.primaryCta}
         </Button>
       </div>

@@ -3,8 +3,11 @@ import { MarketingLandingPage } from './marketing/MarketingLandingPage';
 import { UseCasesPage } from './marketing/pages/UseCasesPage';
 import { ProductPage } from './marketing/pages/ProductPage';
 import { SecurityPage } from './marketing/pages/SecurityPage';
+import { FAQPage } from './marketing/pages/FAQPage';
+import { ReleaseNotesPage } from './marketing/pages/ReleaseNotesPage';
+import { RequestAccessPage } from './marketing/pages/RequestAccessPage';
 
-type PageType = 'home' | 'use-cases' | 'product' | 'security';
+type PageType = 'home' | 'use-cases' | 'features' | 'security' | 'faq' | 'release-notes' | 'request-access';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -14,10 +17,16 @@ export default function App() {
       const hash = window.location.hash.slice(1);
       if (hash === '/use-cases') {
         setCurrentPage('use-cases');
-      } else if (hash === '/product') {
-        setCurrentPage('product');
+      } else if (hash === '/features') {
+        setCurrentPage('features');
       } else if (hash === '/security') {
         setCurrentPage('security');
+      } else if (hash === '/faq') {
+        setCurrentPage('faq');
+      } else if (hash === '/release-notes') {
+        setCurrentPage('release-notes');
+      } else if (hash === '/request-access') {
+        setCurrentPage('request-access');
       } else {
         setCurrentPage('home');
       }
@@ -35,10 +44,16 @@ export default function App() {
     <>
       {currentPage === 'use-cases' ? (
         <UseCasesPage />
-      ) : currentPage === 'product' ? (
+      ) : currentPage === 'features' ? (
         <ProductPage />
       ) : currentPage === 'security' ? (
         <SecurityPage />
+      ) : currentPage === 'faq' ? (
+        <FAQPage />
+      ) : currentPage === 'release-notes' ? (
+        <ReleaseNotesPage />
+      ) : currentPage === 'request-access' ? (
+        <RequestAccessPage />
       ) : (
         <MarketingLandingPage />
       )}

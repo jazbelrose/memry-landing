@@ -57,7 +57,12 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.05 }}
           >
-            <Button variant="primary">{copy.hero.primaryCta}</Button>
+            <Button 
+              variant="primary"
+              onClick={() => { window.location.hash = '/request-access'; }}
+            >
+              {copy.hero.primaryCta}
+            </Button>
             <Button variant="secondary">{ui.contactSales}</Button>
           </motion.div>
         </div>
@@ -89,7 +94,7 @@ export function Footer() {
             <h4 className={styles.footerColTitle}>Company</h4>
             <ul className={styles.footerLinks}>
               <li><a href="#contact">Contact</a></li>
-              <li><a href="#request-access">Request Access</a></li>
+              <li><a href="#/request-access">Request Access</a></li>
             </ul>
           </div>
         </div>

@@ -19,7 +19,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
-  margin-bottom: var(--space-4xl);
+  margin-bottom: var(--space-3xl);
 }
 
 .card {
@@ -40,12 +40,54 @@
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Center the 5th card without leaving a hole */
-.card:nth-child(5) {
+/* Foundation bar - spans both columns, uses grid gap for spacing */
+.foundationBar {
   grid-column: 1 / -1;
-  justify-self: center;
-  width: 100%;
-  max-width: 520px;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-lg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+
+.foundationBar:hover {
+  border-color: var(--border-card);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.foundationIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(250, 51, 86, 0.1);
+  color: var(--brand);
+}
+
+.foundationContent {
+  min-width: 0;
+  flex: 1;
+}
+
+.foundationTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.foundationDescription {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: var(--space-sm) 0 0 0;
 }
 
 .icon {
@@ -78,6 +120,7 @@
   padding: var(--space-2xl);
   background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(8px);
+  margin-top: var(--space-3xl);
 }
 
 .checklistTitle {

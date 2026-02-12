@@ -32,7 +32,7 @@ export function SecurityPage() {
           </motion.div>
 
           <div className={styles.grid}>
-            {securityFeatures.map((feature, i) => (
+            {securityFeatures.slice(0, 4).map((feature, i) => (
               <motion.div
                 key={feature.title}
                 className={styles.card}
@@ -48,6 +48,25 @@ export function SecurityPage() {
                 <p className={styles.cardDescription}>{feature.description}</p>
               </motion.div>
             ))}
+
+            {/* Foundation bar lives inside the grid so spacing uses the same gap */}
+            {securityFeatures[4] && (
+              <motion.div
+                className={styles.foundationBar}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <div className={styles.foundationIcon}>
+                  {iconMap[securityFeatures[4].icon]}
+                </div>
+                <div className={styles.foundationContent}>
+                  <h3 className={styles.foundationTitle}>{securityFeatures[4].title}</h3>
+                  <p className={styles.foundationDescription}>{securityFeatures[4].description}</p>
+                </div>
+              </motion.div>
+            )}
           </div>
 
           <motion.div

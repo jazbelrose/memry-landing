@@ -66,7 +66,13 @@ export function HeroSection() {
           animate="visible"
           custom={0.2}
         >
-          <Button variant="primary" Icon={ArrowRight}>{copy.hero.primaryCta}</Button>
+          <Button 
+            variant="primary" 
+            Icon={ArrowRight}
+            onClick={() => { window.location.hash = '/request-access'; }}
+          >
+            {copy.hero.primaryCta}
+          </Button>
           <Button variant="secondary" Icon={Play}>{copy.hero.secondaryCta}</Button>
         </motion.div>
 

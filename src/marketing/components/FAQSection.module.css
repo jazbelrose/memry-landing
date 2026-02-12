@@ -1,0 +1,111 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-3xl) var(--space-3xl);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.heading {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+}
+
+.subhead {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.faqItem {
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-card);
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  transition: color 200ms ease;
+}
+
+.faqQuestion:hover {
+  color: var(--brand);
+}
+
+.faqQuestion span {
+  flex: 1;
+  min-width: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  transition: color 200ms ease;
+}
+
+.faqQuestion:hover .chevron {
+  color: var(--brand);
+}
+
+.faqAnswer {
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faqAnswer p {
+  margin: var(--space-md) 0 0 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-lg) var(--space-2xl) var(--space-2xl);
+  }
+
+  .faqQuestion {
+    font-size: 15px;
+    padding: var(--space-md) var(--space-lg);
+  }
+
+  .faqAnswer {
+    padding: 0 var(--space-lg) var(--space-md);
+  }
+
+  .faqAnswer p {
+    font-size: 13px;
+  }
+}

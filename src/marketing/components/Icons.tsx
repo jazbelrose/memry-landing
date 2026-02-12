@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Unlink, AlertTriangle, Unplug } from 'lucide-react';
+import { Unlink, AlertTriangle, Unplug, Presentation, Calculator, CheckSquare, CalendarDays, BookOpen, FolderUp } from 'lucide-react';
 
 interface IconProps {
   size?: number;
@@ -93,6 +93,12 @@ const iconMap: Record<string, (props: IconProps) => JSX.Element> = {
   files: FilesIcon,
   connect: ConnectIcon,
   calendar: CalendarIcon,
+  presentation: Presentation,
+  calculator: Calculator,
+  checksquare: CheckSquare,
+  calendardays: CalendarDays,
+  bookopen: BookOpen,
+  folderup: FolderUp,
 };
 
 export function FeatureIcon({ name, size = 24 }: { name: string; size?: number }) {
