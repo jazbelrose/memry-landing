@@ -137,18 +137,6 @@
 }
 .footerLinks a:hover { color: var(--text-primary); }
 
-.footerBottom {
-  max-width: 1120px;
-  margin: var(--space-xl) auto 0;
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
-  font-size: 13px;
-  color: var(--text-muted);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 768px) {
   .footerInner { grid-template-columns: 1fr 1fr; }
