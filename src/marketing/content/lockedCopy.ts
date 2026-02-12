@@ -145,6 +145,11 @@ export const ui = {
   footerTagline: 'The shared brain for production teams.',
   useCasesHeadline: 'Use Cases',
   useCasesSubhead: 'Memry is built for the people who make things happen.',
+  productHeadline: 'Product',
+  productSubhead: 'A complete production management platform. Here\'s what\'s inside.',
+  securityHeadline: 'Security you can trust',
+  securitySubhead: 'Your production data, budgets, and files are protected by design.',
+  securityChecklistTitle: 'Security Practices Checklist',
 } as const;
 
 // ── Data arrays ───────────────────────────────────────────
@@ -158,13 +163,11 @@ hours switching contexts.`,
   },
   {
     title: 'Version Chaos',
-    description: '"final_final_v3.pptx" - Sound familiar? No single source of confusion means endless cpnfusion.',
+    description: '"final_final_v3.pptx" - Sound familiar? No single source of truth means endless confusion.',
   },
   {
     title: 'No Connected Workflow',
-    description: `Tasks aren't linked to budget lines.
-Calendar doesn't know about deadlines.
-Payments happen in the dark.`,
+    description: `Tasks are never linked to budget lines. Calendar blocks don't know about deadlines. Payments happen in the dark.`,
   },
 ];
 
@@ -416,5 +419,124 @@ export const useCases = [
       'Deck Versioning → client-default version with controlled access',
       'Files & Delivery → organized file delivery via CDN links',
     ],
+  },
+];
+
+export const securityFeatures = [
+  {
+    title: 'CDN-Powered File Delivery',
+    description: 'Files served via content delivery network for fast, reliable access worldwide.',
+    icon: 'globe',
+  },
+  {
+    title: 'Signed Expiring URLs',
+    description: 'Secure assets are served via signed URLs that expire, preventing unauthorized access.',
+    icon: 'lock',
+  },
+  {
+    title: 'Soft Delete with 30-Day Retention',
+    description: 'Deleted files are recoverable for 30 days, protecting against accidental data loss.',
+    icon: 'clock',
+  },
+  {
+    title: 'Role-Based Access Control',
+    description: 'Five distinct roles: Admin, Designer, Builder, Vendor, and Client — each with scoped permissions.',
+    icon: 'users',
+  },
+  {
+    title: 'JWT-Based Authentication',
+    description: 'Industry-standard JSON Web Token authentication for secure session management.',
+    icon: 'shield',
+  },
+];
+
+export const securityChecklist = {
+  left: [
+    'All data encrypted in transit (TLS 1.2+)',
+    'Signed, expiring URLs for secure file access',
+    'Audit trails on task and approval workflows',
+    'Input validation and sanitization',
+  ],
+  right: [
+    'Role-based access control on every resource',
+    'Soft delete with 30-day recovery window',
+    'Session management with JWT tokens',
+    'Regular security reviews and updates',
+  ],
+};
+
+export const productFeatures = [
+  {
+    title: 'Project Hub',
+    description: 'Every project lives in a unified hub. Switch between Slides, Budget, Tasks, Calendar, and Files with a single click. No tab overload — just one clean workspace.',
+    icon: 'briefcase',
+  },
+  {
+    title: 'Deck Versioning',
+    description: 'Draft, approved, archived — every version tracked. Set a client-default version to share polished presentations without exposing work-in-progress.',
+    icon: 'slides',
+  },
+  {
+    title: 'Spellbook',
+    description: 'Describe your event and Spellbook generates budget lines, tasks, and calendar blocks. Choose from 6 cost variants: lean to aggressive margin. Every line auto-links to tasks and focus blocks.',
+    icon: 'palette',
+  },
+  {
+    title: 'HQ Ledger',
+    description: 'Import bank CSVs. Auto-categorize transactions. Allocate spend to budget lines across projects. Detect recurring costs. Track variance and margin in real time.',
+    icon: 'budget',
+  },
+  {
+    title: 'Real-time Collaboration',
+    description: 'Built on Yjs CRDT for conflict-free real-time editing across slides, budgets, and tasks. Offline support via IndexedDB ensures notes and drafts are never lost.',
+    icon: 'users',
+  },
+  {
+    title: 'Export & Delivery',
+    description: 'PDF decks with correct styling. CSV budgets for accounting. ICS calendar feeds for external sync. ZIP file bundles for bulk delivery via CDN.',
+    icon: 'download',
+  },
+];
+
+export const productBenefits = [
+  {
+    feature: 'Spellbook',
+    benefit: 'Go from a one-line description to a fully scheduled, budgeted, task-assigned production plan in under a minute — 6 cost variants from lean to aggressive margin.',
+  },
+  {
+    feature: 'Magic Layout Slides',
+    benefit: 'Produce on-brand, client-ready decks in minutes with auto layouts you can generate, shuffle, and remix on the fly.',
+  },
+  {
+    feature: 'Real-time Collaboration',
+    benefit: 'Google Slides-style co-editing — multiple people editing the same deck live, with no conflicts or stale versions.',
+  },
+  {
+    feature: 'Deck Versioning',
+    benefit: 'Eliminate "final_final_v3" — controlled drafts, approvals, and client-visible defaults.',
+  },
+  {
+    feature: 'HQ Financial Ledger',
+    benefit: 'Close the loop: see actual bank spend vs budgeted cost in real time — budget → invoice → bank import → reconcile → variance visible.',
+  },
+  {
+    feature: 'Task Review Workflow',
+    benefit: 'Clear accountability — submit, approve/revise, done; no ambiguous task status.',
+  },
+  {
+    feature: 'Focus Blocks',
+    benefit: 'Schedule work in real chunks — group tasks into calendar blocks so you don\'t overbook.',
+  },
+  {
+    feature: 'Global Search',
+    benefit: 'Find anything instantly across projects and messages — no digging through folders.',
+  },
+  {
+    feature: 'Smart Notifications',
+    benefit: 'Stay informed without the noise — deduped, batched alerts with no phantom pings.',
+  },
+  {
+    feature: 'PDF Export',
+    benefit: 'Client-ready, high-fidelity PDFs in one click.',
   },
 ];

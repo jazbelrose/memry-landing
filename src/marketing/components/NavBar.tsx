@@ -5,9 +5,9 @@ import styles from './NavBar.module.css';
 
 export function NavBar() {
   const navigationLinks = [
-    { label: 'Product', href: '#product' },
+    { label: 'Product', href: '#/product' },
     { label: 'Use Cases', href: '#/use-cases' },
-    { label: 'Security', href: '#security' },
+    { label: 'Security', href: '#/security' },
     { label: 'FAQ', href: '#faq' },
     { label: 'Release Notes', href: '#release-notes' },
   ];
@@ -22,7 +22,7 @@ export function NavBar() {
     >
       <div className={styles.inner}>
         <div className={styles.left}>
-          <span className={styles.logo} aria-label="Memry home"><img src="/memry-logo.svg" alt="" className={styles.logoIcon} /> memry</span>
+          <a href="#/" className={styles.logo} aria-label="Memry home"><img src="/memry-logo.svg" alt="" className={styles.logoIcon} /> memry</a>
           <span className={styles.chip}>{ui.navChip}</span>
         </div>
         <div className={styles.links}>

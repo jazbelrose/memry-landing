@@ -74,7 +74,7 @@ export function Footer() {
             <h4 className={styles.footerColTitle}>Product</h4>
             <ul className={styles.footerLinks}>
               <li><a href="#features">Features</a></li>
-              <li><a href="#security">Security</a></li>
+              <li><a href="#/security">Security</a></li>
               <li><a href="#release-notes">Release Notes</a></li>
             </ul>
           </div>
