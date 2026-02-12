@@ -4,7 +4,7 @@ import { Check } from 'lucide-react';
 import styles from './RequestAccessSection.module.css';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 1, y: 20 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
