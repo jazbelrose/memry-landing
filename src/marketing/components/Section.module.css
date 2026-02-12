@@ -1,0 +1,16 @@
+.section {
+  padding: var(--space-4xl) var(--space-lg);
+  width: 100%;
+}
+
+.inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-3xl) var(--space-md);
+  }
+}

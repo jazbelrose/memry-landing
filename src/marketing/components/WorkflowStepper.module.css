@@ -1,0 +1,116 @@
+.header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.label {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand);
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+/* ── Stepper layout ──────────────────────────────────── */
+.stepper {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 52px;
+}
+
+.track {
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1px;
+}
+
+.progress {
+  width: 100%;
+  height: 0%;
+  background: var(--brand);
+  border-radius: 1px;
+  box-shadow: 0 0 8px rgba(250, 51, 86, 0.3);
+}
+
+.progressStatic {
+  height: 100% !important;
+  opacity: 0.2;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* ── Step ─────────────────────────────────────────────── */
+.step {
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  opacity: 0.3;
+  transition: opacity 0.4s ease;
+}
+.stepActive { opacity: 1; }
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+}
+.stepActive .stepNumber {
+  border-color: var(--brand);
+  box-shadow: 0 0 12px rgba(250, 51, 86, 0.2);
+  color: var(--brand);
+}
+
+.stepContent { padding-top: 8px; }
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stepDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Reduced motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .step { opacity: 1; }
+  .stepNumber {
+    border-color: var(--border-subtle);
+    color: var(--text-secondary);
+  }
+  .progress {
+    height: 100% !important;
+    opacity: 0.15;
+  }
+}

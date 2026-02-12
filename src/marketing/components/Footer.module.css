@@ -1,0 +1,125 @@
+/* ── V1 Readiness ────────────────────────────────────── */
+.v1Section {
+  padding: var(--space-3xl) var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.v1Inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.v1Heading {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.v1Body {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+/* ── CTA Band ────────────────────────────────────────── */
+.ctaBand {
+  padding: var(--space-4xl) var(--space-lg);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(250, 51, 86, 0.06) 0%,
+    transparent 70%
+  );
+}
+
+.ctaInner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaHeading {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: var(--space-xl);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Footer ──────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+}
+
+.footerInner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.footerLogo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.footerTagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.footerColTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.footerLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footerLinks a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 180ms ease;
+}
+.footerLinks a:hover { color: var(--text-primary); }
+
+.footerBottom {
+  max-width: 1120px;
+  margin: var(--space-xl) auto 0;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footerInner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footerInner { grid-template-columns: 1fr; }
+}

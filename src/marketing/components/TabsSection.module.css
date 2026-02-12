@@ -1,0 +1,120 @@
+.heading {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+/* ── Tab list ────────────────────────────────────────── */
+.tabList {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+}
+
+.tab {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 180ms ease;
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+}
+.tab:hover { color: var(--text-primary); }
+.tabActive { color: var(--text-primary); }
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand);
+  border-radius: 1px;
+}
+
+/* ── Panel ───────────────────────────────────────────── */
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  min-height: 280px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.panelCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.panelHeadline {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.panelBody {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.panelFeatures {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.panelFeatures li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  position: relative;
+}
+.panelFeatures li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  color: var(--brand);
+}
+
+.panelDiagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .panel { grid-template-columns: 1fr; }
+  .tabList {
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+}

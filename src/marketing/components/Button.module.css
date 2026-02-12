@@ -1,0 +1,34 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: box-shadow 180ms ease, background 180ms ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.primary {
+  background: var(--brand);
+  color: #fff;
+}
+.primary:hover {
+  background: var(--brand-hover);
+  box-shadow: 0 0 0 4px var(--brand-08), 0 8px 24px rgba(250, 51, 86, 0.2);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+}
+.secondary:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
