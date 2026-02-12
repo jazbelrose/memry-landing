@@ -30,6 +30,15 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logoIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .chip {
@@ -40,4 +49,22 @@
   background: var(--brand-08);
   color: var(--brand);
   letter-spacing: 0.02em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--text-primary);
 }

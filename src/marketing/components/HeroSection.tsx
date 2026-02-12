@@ -1,5 +1,6 @@
 import { useCallback, useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight, Play } from 'lucide-react';
 import { copy } from '../content/lockedCopy';
 import { Button } from './Button';
 import styles from './HeroSection.module.css';
@@ -65,8 +66,8 @@ export function HeroSection() {
           animate="visible"
           custom={0.2}
         >
-          <Button variant="primary">{copy.hero.primaryCta}</Button>
-          <Button variant="secondary">{copy.hero.secondaryCta}</Button>
+          <Button variant="primary" Icon={ArrowRight}>{copy.hero.primaryCta}</Button>
+          <Button variant="secondary" Icon={Play}>{copy.hero.secondaryCta}</Button>
         </motion.div>
 
         {/* Mock product UI frame */}

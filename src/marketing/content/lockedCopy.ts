@@ -10,7 +10,7 @@ export const copy = {
   hero: {
     headline: 'The shared brain teams use to plan, execute, and deliver work.',
     subhead:
-      'Memry brings decks, budgets, tasks, schedules, files, and communication into one\ncontinuous system — so nothing breaks between intent and execution.',
+      'Budgets, schedules, and deliverables in one workspace.\nNo more tool-switching. No more version chaos.',
     primaryCta: 'Request Access',
     secondaryCta: 'See How It Works',
   },

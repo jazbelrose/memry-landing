@@ -67,35 +67,35 @@ export function Footer() {
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <div className={styles.footerCol}>
-            <span className={styles.footerLogo}>memry</span>
+            <span className={styles.footerLogo}><img src="/memry-logo.svg" alt="" className={styles.footerLogoIcon} /> memry</span>
             <p className={styles.footerTagline}>{ui.footerTagline}</p>
           </div>
           <div className={styles.footerCol}>
             <h4 className={styles.footerColTitle}>Product</h4>
             <ul className={styles.footerLinks}>
-              <li><a href="#workspace">Workspace</a></li>
               <li><a href="#features">Features</a></li>
-              <li><a href="#comparison">Comparison</a></li>
+              <li><a href="#security">Security</a></li>
+              <li><a href="#release-notes">Release Notes</a></li>
+            </ul>
+          </div>
+          <div className={styles.footerCol}>
+            <h4 className={styles.footerColTitle}>Resources</h4>
+            <ul className={styles.footerLinks}>
+              <li><a href="#use-cases">Use Cases</a></li>
+              <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
           <div className={styles.footerCol}>
             <h4 className={styles.footerColTitle}>Company</h4>
             <ul className={styles.footerLinks}>
-              <li><a href="#about">About</a></li>
-              <li><a href="#careers">Careers</a></li>
               <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div className={styles.footerCol}>
-            <h4 className={styles.footerColTitle}>Legal</h4>
-            <ul className={styles.footerLinks}>
-              <li><a href="#privacy">Privacy</a></li>
-              <li><a href="#terms">Terms</a></li>
+              <li><a href="#request-access">Request Access</a></li>
             </ul>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>&copy; 2026 Memry. All rights reserved.</p>
+          <span>&copy; {new Date().getFullYear()} Memry by Jensen and Juhl</span>
+          <span>All rights reserved.</span>
         </div>
       </footer>
     </>

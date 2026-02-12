@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { Unlink, AlertTriangle, Unplug } from 'lucide-react';
 
 interface IconProps {
   size?: number;
@@ -76,40 +77,11 @@ export function CalendarIcon({ size = 24, ...props }: IconProps) {
   );
 }
 
-export function FragmentedIcon({ size = 24, ...props }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <rect x="2" y="2" width="8" height="8" rx="1" />
-      <rect x="14" y="2" width="8" height="8" rx="1" />
-      <rect x="2" y="14" width="8" height="8" rx="1" />
-      <rect x="14" y="14" width="8" height="8" rx="1" />
-    </svg>
-  );
-}
+export const FragmentedIcon = Unlink;
 
-export function VersionIcon({ size = 24, ...props }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M12 3v4" />
-      <path d="M12 17v4" />
-      <path d="M3 12h4" />
-      <path d="M17 12h4" />
-      <circle cx="12" cy="12" r="3" />
-      <path d="M7.5 7.5L9 9" />
-      <path d="M15 15l1.5 1.5" />
-    </svg>
-  );
-}
+export const VersionIcon = AlertTriangle;
 
-export function DisconnectIcon({ size = 24, ...props }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M15 7h2a5 5 0 0 1 0 10h-2" />
-      <path d="M9 17H7A5 5 0 0 1 7 7h2" />
-      <line x1="8" y1="12" x2="16" y2="12" strokeDasharray="2 2" />
-    </svg>
-  );
-}
+export const DisconnectIcon = Unplug;
 
 /* ── Icon lookup for feature grid ─────────────────────── */
 

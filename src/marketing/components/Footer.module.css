@@ -68,16 +68,24 @@
   max-width: 1120px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  gap: var(--space-2xl);
 }
 
 .footerLogo {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 8px;
+}
+
+.footerLogoIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .footerTagline {
@@ -114,6 +122,9 @@
   border-top: 1px solid var(--border-subtle);
   font-size: 13px;
   color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* ── Responsive ──────────────────────────────────────── */

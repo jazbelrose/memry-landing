@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
@@ -8,6 +9,7 @@ interface ButtonProps {
   onClick?: () => void;
   ariaLabel?: string;
   className?: string;
+  Icon?: LucideIcon;
 }
 
 export function Button({
@@ -16,6 +18,7 @@ export function Button({
   onClick,
   ariaLabel,
   className,
+  Icon,
 }: ButtonProps) {
   return (
     <motion.button
@@ -26,6 +29,7 @@ export function Button({
       aria-label={ariaLabel}
     >
       {children}
+      {Icon && <Icon size={18} className={styles.icon} />}
     </motion.button>
   );
 }
