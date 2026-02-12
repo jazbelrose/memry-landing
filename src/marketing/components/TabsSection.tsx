@@ -1,6 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { copy, tabsData } from '../content/lockedCopy';
+import { SlidesIcon, BudgetIcon, TasksIcon, CalendarIcon, FilesIcon } from './Icons';
 import { Section } from './Section';
 import styles from './TabsSection.module.css';
 
@@ -10,6 +11,14 @@ interface NodeDef {
   y: number;
   label: string;
 }
+
+const iconMap: Record<string, React.FC<{ size?: number }>> = {
+  slides: SlidesIcon,
+  budget: BudgetIcon,
+  tasks: TasksIcon,
+  calendar: CalendarIcon,
+  files: FilesIcon,
+};
 
 const diagrams: Record<string, { nodes: NodeDef[]; edges: [number, number][] }> = {
   slides: {
@@ -138,13 +147,27 @@ export function TabsSection() {
         {copy.solution.headline}
       </motion.h2>
 
+      {copy.solution.subheadline && (
+        <motion.p
+          className={styles.subheading}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          {copy.solution.subheadline}
+        </motion.p>
+      )}
+
       <div
         className={styles.tabList}
         role="tablist"
         aria-label="Workspace modules"
         onKeyDown={handleKeyDown}
       >
-        {tabsData.map((t, i) => (
+        {tabsData.map((t, i) => {
+          const IconComponent = iconMap[t.icon];
+          return (
           <button
             key={t.id}
             ref={(el) => {
@@ -158,6 +181,7 @@ export function TabsSection() {
             className={`${styles.tab} ${i === active ? styles.tabActive : ''}`}
             onClick={() => setActive(i)}
           >
+            {IconComponent && <IconComponent size={20} />}
             {t.label}
             {i === active && (
               <motion.span
@@ -167,7 +191,8 @@ export function TabsSection() {
               />
             )}
           </button>
-        ))}
+          );
+        })}
       </div>
 
       <AnimatePresence mode="wait">

@@ -26,7 +26,8 @@ Every change should ripple across the whole workflow instantly.`,
   },
 
   solution: {
-    headline: "Everything moves together — because it's one workspace.",
+    headline: "Everything in one workspace",
+    subheadline: "Five integrated modules. One source of truth.",
     body: `memry connects the pieces that normally drift apart:
 Decks, budgets, tasks, calendars, files, approvals, and project communication.
 When the budget changes, the task plan updates.
@@ -180,6 +181,7 @@ export const tabsData = [
   {
     id: 'slides',
     label: 'Slides',
+    icon: 'slides',
     headline: copy.decks.headline,
     body: copy.decks.body,
     features: [...copy.decks.features],
@@ -187,6 +189,7 @@ export const tabsData = [
   {
     id: 'budgets',
     label: 'Budgets',
+    icon: 'budget',
     headline: copy.budgets.headline,
     body: copy.budgets.body,
     features: [...copy.budgets.features],
@@ -194,6 +197,7 @@ export const tabsData = [
   {
     id: 'tasks',
     label: 'Tasks',
+    icon: 'tasks',
     headline: copy.tasks.headline,
     body: copy.tasks.body,
     features: [...copy.tasks.features],
@@ -201,6 +205,7 @@ export const tabsData = [
   {
     id: 'calendar',
     label: 'Calendar',
+    icon: 'calendar',
     headline: 'Schedules stay connected to delivery.',
     body: 'Project timelines update as scope and tasks evolve. Deadlines reflect reality, not guesswork.',
     features: [] as string[],
@@ -208,6 +213,7 @@ export const tabsData = [
   {
     id: 'files',
     label: 'Files',
+    icon: 'files',
     headline: copy.files.headline,
     body: copy.files.body,
     features: [...copy.files.features],
