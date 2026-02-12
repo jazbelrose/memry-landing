@@ -12,7 +12,7 @@
 The shared brain teams use to plan, execute, and deliver work.
 
 **Subhead**
-Memry brings decks, budgets, tasks, schedules, files, and communication into one
+memry brings decks, budgets, tasks, schedules, files, and communication into one
 continuous system — so nothing breaks between intent and execution.
 
 **Primary CTA** — Request Access
@@ -29,7 +29,7 @@ The system breaks when your work lives in five tools.
 Plans in slides. Budgets in spreadsheets. Decisions in chat.
 Tasks in Asana. Files in Drive.
 Nothing connects — which means the project never actually stays aligned.
-Memry exists because production work is not a set of documents.
+memry exists because production work is not a set of documents.
 It's a single operational system.
 Every change should ripple across the whole workflow instantly.
 
@@ -41,7 +41,7 @@ Every change should ripple across the whole workflow instantly.
 Everything moves together — because it's one workspace.
 
 **Body Copy**
-Memry connects the pieces that normally drift apart:
+memry connects the pieces that normally drift apart:
 Decks, budgets, tasks, calendars, files, approvals, and project communication.
 When the budget changes, the task plan updates.
 When a deck version ships, the team is aligned.
@@ -76,7 +76,7 @@ This is how you scale repeatable work without repeating yourself.
 Decks are version-controlled and built for client-facing work.
 
 **Body Copy**
-Memry includes a multi-slide editor designed for concept decks, client previews,
+memry includes a multi-slide editor designed for concept decks, client previews,
 and production-ready documentation.
 No overwriting.
 No "final_v7."
@@ -98,7 +98,7 @@ Budgets stay connected to scope, margin, and reality.
 Structured line items. Real-time totals. Linked to tasks and delivery.
 
 **Body Copy**
-Budgets in Memry aren't spreadsheets. They're a live model.
+Budgets in memry aren't spreadsheets. They're a live model.
 Cost, markup, and client price stay visible.
 Line items link to tasks and deliverables.
 As spend comes in, reconciliation updates margin — without manual cleanup.
@@ -119,7 +119,7 @@ Tasks are assigned, tracked, and tied to real delivery.
 Not a list — a workflow.
 
 **Body Copy**
-Memry tasks are structured by production logic:
+memry tasks are structured by production logic:
 assigned owners, status transitions, dependencies, and audit trails.
 They connect directly to budget scope and project timelines — so tasks reflect
 what the work actually costs and impacts.
@@ -140,7 +140,7 @@ Files, assets, and delivery live inside the project.
 Upload, organize, share, and deliver without losing context.
 
 **Body Copy**
-Memry includes project file storage built for production environments:
+memry includes project file storage built for production environments:
 team uploads, vendor files, client exports, revision sets, delivery links.
 No more hunting through Drive folders or email attachments.
 Everything is tied to the project and the work.
@@ -158,7 +158,7 @@ Everything is tied to the project and the work.
 Built for every role involved in real production.
 
 **Subhead**
-Memry isn't a "tool for creatives."
+memry isn't a "tool for creatives."
 It's an operating system for the full team.
 
 **Bullet List**
@@ -172,7 +172,7 @@ It's an operating system for the full team.
 ## SECTION 10 — V1 READINESS
 
 **Headline**
-Memry V1 is built for real teams running real budgets.
+memry V1 is built for real teams running real budgets.
 
 **Body Copy**
 This is not a prototype.

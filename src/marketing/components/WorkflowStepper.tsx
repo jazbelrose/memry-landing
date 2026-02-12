@@ -7,14 +7,16 @@ import styles from './WorkflowStepper.module.css';
 export function WorkflowStepper() {
   const containerRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
-  const [activeStep, setActiveStep] = useState(0);
-  const [gsapLoaded, setGsapLoaded] = useState(false);
+  const [activeStep, setActiveStep] = useState(-1);
 
   useEffect(() => {
     const prefersReduced = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches;
-    if (prefersReduced) return;
+    if (prefersReduced) {
+      setActiveStep(workflowSteps.length - 1);
+      return;
+    }
 
     let cancelled = false;
     let ctx: { revert: () => void } | undefined;
@@ -29,7 +31,6 @@ export function WorkflowStepper() {
         const ScrollTrigger =
           stMod.ScrollTrigger ?? (stMod as any).default;
         gsap.registerPlugin(ScrollTrigger);
-        setGsapLoaded(true);
 
         if (!containerRef.current || !progressRef.current) return;
 
@@ -42,7 +43,7 @@ export function WorkflowStepper() {
               trigger: containerRef.current,
               start: 'top 60%',
               end: 'bottom 40%',
-              scrub: 0.3,
+              scrub: 0.4,
             },
           });
 
@@ -55,15 +56,14 @@ export function WorkflowStepper() {
 
             ScrollTrigger.create({
               trigger: el,
-              start: 'top 65%',
-              end: 'bottom 35%',
-              onEnter: () => setActiveStep(i),
+              start: 'top 70%',
+              onEnter: () => setActiveStep((prev) => Math.max(prev, i)),
               onEnterBack: () => setActiveStep(i),
             });
           });
         }, containerRef);
       } catch {
-        /* GSAP not available — static fallback */
+        setActiveStep(workflowSteps.length - 1);
       }
     })();
 
@@ -84,15 +84,17 @@ export function WorkflowStepper() {
       >
         <span className={styles.label}>{ui.workflowLabel}</span>
         <h2 className={styles.heading}>{ui.workflowTitle}</h2>
+        <p className={styles.subheading}>
+          From first file upload to final reconciliation — here's how a real project flows through memry.
+        </p>
       </motion.div>
 
       <div className={styles.stepper} ref={containerRef}>
+        {/* Vertical track + animated progress fill */}
         <div className={styles.track} aria-hidden="true">
-          <div
-            className={`${styles.progress} ${gsapLoaded ? '' : styles.progressStatic}`}
-            ref={progressRef}
-          />
+          <div className={styles.progress} ref={progressRef} />
         </div>
+
         <div className={styles.steps}>
           {workflowSteps.map((step, i) => (
             <div
@@ -100,10 +102,12 @@ export function WorkflowStepper() {
               data-step={i}
               className={`${styles.step} ${i <= activeStep ? styles.stepActive : ''}`}
             >
-              <div className={styles.stepNumber}>
-                <span>{step.number}</span>
+              <div className={styles.node}>
+                <span className={styles.nodeNumber}>
+                  {String(step.number).padStart(2, '0')}
+                </span>
               </div>
-              <div className={styles.stepContent}>
+              <div className={styles.stepCard}>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDesc}>{step.description}</p>
               </div>

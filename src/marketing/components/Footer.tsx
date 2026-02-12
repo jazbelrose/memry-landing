@@ -99,7 +99,7 @@ export function Footer() {
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <span>&copy; {new Date().getFullYear()} Memry by Jensen and Juhl</span>
+          <span>&copy; {new Date().getFullYear()} memry by Jensen and Juhl</span>
           <span>All rights reserved.</span>
         </div>
       </footer>

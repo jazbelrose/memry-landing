@@ -20,14 +20,14 @@ export const copy = {
     body: `Plans in slides. Budgets in spreadsheets. Decisions in chat.
 Tasks in Asana. Files in Drive.
 By the time work reaches execution, context is already gone.
-Memry exists because production work is not a set of documents.
+memry exists because production work is not a set of documents.
 It's a single operational system.
 Every change should ripple across the whole workflow instantly.`,
   },
 
   solution: {
     headline: "Everything moves together — because it's one workspace.",
-    body: `Memry connects the pieces that normally drift apart:
+    body: `memry connects the pieces that normally drift apart:
 Decks, budgets, tasks, calendars, files, approvals, and project communication.
 When the budget changes, the task plan updates.
 When a deck version ships, the team is aligned.
@@ -52,7 +52,7 @@ This is how you scale repeatable work without repeating yourself.`,
 
   decks: {
     headline: 'Decks are version-controlled and built for client-facing work.',
-    body: `Memry includes a multi-slide editor designed for concept decks, client previews,
+    body: `memry includes a multi-slide editor designed for concept decks, client previews,
 and production-ready documentation.
 No overwriting.
 No "final_v7."
@@ -67,7 +67,7 @@ No misaligned versions between the designer, producer, and client.`,
   budgets: {
     headline: 'Budgets stay connected to scope, margin, and reality.',
     supportLine: 'Structured line items. Real-time totals. Linked to tasks and delivery.',
-    body: `Budgets in Memry aren't spreadsheets. They're a live model.
+    body: `Budgets in memry aren't spreadsheets. They're a live model.
 Cost, markup, and client price stay visible.
 Line items link to tasks and deliverables.
 As spend comes in, reconciliation updates margin — without manual cleanup.`,
@@ -81,7 +81,7 @@ As spend comes in, reconciliation updates margin — without manual cleanup.`,
   tasks: {
     headline: 'Tasks are assigned, tracked, and tied to real delivery.',
     supportLine: 'Not a list — a workflow.',
-    body: `Memry tasks are structured by production logic:
+    body: `memry tasks are structured by production logic:
 assigned owners, status transitions, dependencies, and audit trails.
 They connect directly to budget scope and project timelines — so tasks reflect
 what the work actually costs and impacts.`,
@@ -95,7 +95,7 @@ what the work actually costs and impacts.`,
   files: {
     headline: 'Files, assets, and delivery live inside the project.',
     supportLine: 'Upload, organize, share, and deliver without losing context.',
-    body: `Memry includes project file storage built for production environments:
+    body: `memry includes project file storage built for production environments:
 team uploads, vendor files, client exports, revision sets, delivery links.
 No more hunting through Drive folders or email attachments.
 Everything is tied to the project and the work.`,
@@ -109,7 +109,7 @@ Everything is tied to the project and the work.`,
   whoItsFor: {
     headline: 'Built for every role involved in real production.',
     subhead:
-      "Memry isn't a \"tool for creatives.\"\nIt's an operating system for the full team.",
+      "memry isn't a \"tool for creatives.\"\nIt's an operating system for the full team.",
     roles: [
       { role: 'CEO / Admin', description: 'visibility across every project and dollar' },
       { role: 'Producer / PM', description: 'real-time control of scope, schedule, approvals' },
@@ -122,7 +122,7 @@ Everything is tied to the project and the work.`,
   },
 
   v1Readiness: {
-    headline: 'Memry V1 is built for real teams running real budgets.',
+    headline: 'memry V1 is built for real teams running real budgets.',
     body: `This is not a prototype.
 V1 already supports decks, budgets, tasks, files, and project operations in one
 connected workspace.
@@ -137,14 +137,14 @@ export const ui = {
   problemSupport:
     'By the time work reaches execution, context is already gone.',
   featureGridHeading: 'Built for the way you actually work',
-  comparisonHeading: 'Why Memry instead of the usual stack?',
+  comparisonHeading: 'Why memry instead of the usual stack?',
   workflowLabel: 'Case Study',
-  workflowTitle: 'Luxe Gala 2026 — $250K Corporate Event',
+  workflowTitle: 'LA Awards Week Gala',
   ctaHeadline: 'Replace chaos with a single source of truth.',
   contactSales: 'Contact Sales',
   footerTagline: 'The shared brain for production teams.',
   useCasesHeadline: 'Use Cases',
-  useCasesSubhead: 'Memry is built for the people who make things happen.',
+  useCasesSubhead: 'memry is built for the people who make things happen.',
   productHeadline: 'Features',
   productSubhead: 'A complete production management platform. Here\'s what\'s inside.',
   securityHeadline: 'Security you can trust',
@@ -153,7 +153,7 @@ export const ui = {
   faqHeadline: 'Frequently Asked Questions',
   faqSubhead: 'Answers to your questions. No fluff.',
   releaseHeadline: 'Release Notes — V1.0',
-  releaseSubhead: 'Everything included in the initial release of Memry.',
+  releaseSubhead: 'Everything included in the initial release of memry.',
   releaseDate: 'February 2026',
 } as const;
 
@@ -256,33 +256,33 @@ export const featureCards = [
 export const comparisonRows = [
   {
     tool: 'Google Slides + Sheets',
-    gap: 'Decks and budgets live in separate tools. No version link.',
-    advantage: 'Decks and budgets in one workspace, version-controlled.',
+    gap: 'Decks and budgets live in separate tools.',
+    advantage: 'Decks + budgets in one workspace, versioned together.',
   },
   {
     tool: 'Notion / Asana',
-    gap: 'Tasks disconnected from budgets, files, and delivery.',
-    advantage: 'Tasks linked to budget line items and project timelines.',
+    gap: 'Tasks have no link to budgets or delivery.',
+    advantage: 'Tasks linked directly to budget lines and timelines.',
   },
   {
     tool: 'Figma',
-    gap: 'Design files live outside the production workflow.',
+    gap: 'Design files live outside production workflow.',
     advantage: 'Deck editor built into the production system.',
   },
   {
     tool: 'Monday.com',
     gap: 'Project management without financial visibility.',
-    advantage: 'Real-time margin tracking alongside task execution.',
+    advantage: 'Real-time margin tracking alongside execution.',
   },
   {
     tool: 'Spreadsheets',
-    gap: 'Manual reconciliation. No live connection to scope.',
+    gap: 'Manual reconciliation with no live connection.',
     advantage: 'Budgets auto-update as spend and scope change.',
   },
   {
     tool: 'Email + Chat',
-    gap: 'Decisions lost in threads. No audit trail.',
-    advantage: 'Communication tied to projects with full context.',
+    gap: 'Decisions lost in threads with no audit trail.',
+    advantage: 'Project threads + DMs + in-context file sharing.',
   },
 ];
 
@@ -290,32 +290,32 @@ export const workflowSteps = [
   {
     number: 1,
     title: 'Project Setup',
-    description: 'Create the project workspace, define scope, and invite the team.',
+    description: 'Create the LA Awards Week Gala project. Upload vendor files, add thread notes, invite the team.',
   },
   {
     number: 2,
     title: 'Deck Creation',
-    description: 'Build client-facing concept decks with version control.',
+    description: 'Design the event concept deck. Generate a client preview version with one click — no overwrite risk.',
   },
   {
     number: 3,
     title: 'Spellbook Budget Generation',
-    description: 'Generate structured budgets from production templates.',
+    description: '"200-person corporate gala with full drape, 40 uplights, 6 crew days" — Spellbook generates budget lines, tasks, and focus blocks automatically.',
   },
   {
     number: 4,
     title: 'Task Assignment',
-    description: 'Assign tasks linked to budget items and delivery milestones.',
+    description: 'Tasks linked to budget lines are assigned to builders. Status transitions track progress with audit trails.',
   },
   {
     number: 5,
     title: 'Execution & Review',
-    description: 'Track progress, manage files, and review deliverables.',
+    description: 'Photo uploads, vendor approvals, review workflows, KPI cards update: Target, Cost, Margin, Client Total.',
   },
   {
     number: 6,
     title: 'HQ Reconciliation',
-    description: 'Reconcile spend against budget. Margin updates automatically.',
+    description: 'Import bank transactions → auto-categorize → allocate spend to budget lines → variance & margin updates in real time.',
   },
 ];
 
@@ -549,7 +549,7 @@ export const productBenefits = [
 export const faqItems = [
   {
     question: 'Is collaboration real-time?',
-    answer: 'Yes. Memry uses Yjs CRDT over WebSocket for conflict-free simultaneous editing on slides.',
+    answer: 'Yes. memry uses Yjs CRDT over WebSocket for conflict-free simultaneous editing on slides.',
   },
   {
     question: 'How does file security work?',
@@ -565,7 +565,7 @@ export const faqItems = [
   },
   {
     question: 'Is there a mobile experience?',
-    answer: 'Memry is a PWA with service worker caching. Mobile users get a read-only slide viewer and adapted task/budget views. Full editing is desktop-optimized.',
+    answer: 'memry is a PWA with service worker caching. Mobile users get a read-only slide viewer and adapted task/budget views. Full editing is desktop-optimized.',
   },
   {
     question: 'How is authentication handled?',

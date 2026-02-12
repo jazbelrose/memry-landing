@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { X, Check } from 'lucide-react';
 import { comparisonRows, ui } from '../content/lockedCopy';
 import { Section } from './Section';
 import styles from './ComparisonTable.module.css';
@@ -27,15 +28,25 @@ export function ComparisonTable() {
             <tr>
               <th scope="col">Current Tool</th>
               <th scope="col">The Gap</th>
-              <th scope="col">Memry Advantage</th>
+              <th scope="col" className={styles.featuredHeader}>Memry Advantage</th>
             </tr>
           </thead>
           <tbody>
             {comparisonRows.map((row) => (
               <tr key={row.tool}>
                 <td className={styles.toolCell}>{row.tool}</td>
-                <td className={styles.gapCell}>{row.gap}</td>
-                <td className={styles.advantageCell}>{row.advantage}</td>
+                <td className={styles.gapCell}>
+                  <span className={styles.iconWrap}>
+                    <X size={14} className={styles.xIcon} />
+                  </span>
+                  {row.gap}
+                </td>
+                <td className={`${styles.advantageCell} ${styles.featured}`}>
+                  <span className={styles.iconWrap}>
+                    <Check size={14} className={styles.checkIcon} />
+                  </span>
+                  {row.advantage}
+                </td>
               </tr>
             ))}
           </tbody>

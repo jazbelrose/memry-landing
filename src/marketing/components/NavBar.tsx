@@ -22,7 +22,7 @@ export function NavBar() {
     >
       <div className={styles.inner}>
         <div className={styles.left}>
-          <a href="#/" className={styles.logo} aria-label="Memry home"><img src="/memry-logo.svg" alt="" className={styles.logoIcon} /> memry</a>
+          <a href="#/" className={styles.logo} aria-label="memry home"><img src="/memry-logo.svg" alt="" className={styles.logoIcon} /> memry</a>
           <span className={styles.chip}>{ui.navChip}</span>
         </div>
         <div className={styles.links}>
