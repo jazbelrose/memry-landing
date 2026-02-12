@@ -6,36 +6,24 @@ import styles from './Footer.module.css';
 export function Footer() {
   return (
     <>
-      {/* ── V1 Readiness ────────────────────────────── */}
-      <section className={styles.v1Section} id="v1">
-        <div className={styles.v1Inner}>
-          <motion.h2
-            className={styles.v1Heading}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            {copy.v1Readiness.headline}
-          </motion.h2>
-          <motion.p
-            className={styles.v1Body}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-          >
-            {copy.v1Readiness.body}
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Button variant="primary">{copy.hero.primaryCta}</Button>
-          </motion.div>
-        </div>
+      {/* ── V1 Credibility Strip ───────────────────── */}
+      <section className={styles.v1Strip} id="v1">
+        <motion.div
+          className={styles.v1StripInner}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className={styles.v1LogoBlock}>
+            <img src="/memry-logo.svg" alt="" className={styles.v1Logo} />
+            <span className={styles.v1Wordmark}>memry</span>
+            <span className={styles.v1Pill}>V1</span>
+          </div>
+          <p className={styles.v1StripBody}>
+            Built for production, not promises.
+          </p>
+        </motion.div>
       </section>
 
       {/* ── CTA Band ────────────────────────────────── */}

@@ -1,35 +1,57 @@
-/* ── V1 Readiness ────────────────────────────────────── */
-.v1Section {
-  padding: var(--space-3xl) var(--space-lg);
-  border-top: 1px solid var(--border-subtle);
+/* ── V1 Credibility Strip ────────────────────────────── */
+.v1Strip {
+  padding: var(--space-2xl) var(--space-lg) var(--space-lg);
 }
 
-.v1Inner {
-  max-width: 640px;
+.v1StripInner {
+  max-width: 860px;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-md);
 }
 
-.v1Heading {
-  font-size: clamp(22px, 3vw, 28px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.v1LogoBlock {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.v1Body {
+.v1Logo {
+  width: 44px;
+  height: 44px;
+}
+
+.v1Wordmark {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.v1Pill {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--brand);
+  background: rgba(250, 51, 86, 0.12);
+  border: 1px solid rgba(250, 51, 86, 0.2);
+  padding: 3px 12px;
+  border-radius: 100px;
+  line-height: 1.5;
+  margin-top: 2px;
+}
+
+.v1StripBody {
   font-size: 15px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  white-space: pre-line;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: -0.01em;
 }
 
 /* ── CTA Band ────────────────────────────────────────── */
 .ctaBand {
-  padding: var(--space-4xl) var(--space-lg);
+  padding: var(--space-2xl) var(--space-lg) var(--space-4xl);
   background: radial-gradient(
     ellipse at center,
     rgba(250, 51, 86, 0.06) 0%,
