@@ -1,4 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import {
+  HashRouter,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useNavigationType,
+} from 'react-router-dom';
 import { MarketingLandingPage } from './marketing/MarketingLandingPage';
 import { UseCasesPage } from './marketing/pages/UseCasesPage';
 import { ProductPage } from './marketing/pages/ProductPage';
@@ -7,56 +15,112 @@ import { FAQPage } from './marketing/pages/FAQPage';
 import { ReleaseNotesPage } from './marketing/pages/ReleaseNotesPage';
 import { RequestAccessPage } from './marketing/pages/RequestAccessPage';
 
-type PageType = 'home' | 'use-cases' | 'features' | 'security' | 'faq' | 'release-notes' | 'request-access';
+const scrollPositions = new Map<string, number>();
 
-export default function App() {
-  const [currentPage, setCurrentPage] = useState<PageType>('home');
+function getScrollElement(): HTMLElement {
+  const explicitScrollContainer = document.querySelector<HTMLElement>('[data-scroll-container], #appScroll');
+  if (explicitScrollContainer) {
+    return explicitScrollContainer;
+  }
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.slice(1);
-      if (hash === '/use-cases') {
-        setCurrentPage('use-cases');
-      } else if (hash === '/features') {
-        setCurrentPage('features');
-      } else if (hash === '/security') {
-        setCurrentPage('security');
-      } else if (hash === '/faq') {
-        setCurrentPage('faq');
-      } else if (hash === '/release-notes') {
-        setCurrentPage('release-notes');
-      } else if (hash === '/request-access') {
-        setCurrentPage('request-access');
-      } else {
-        setCurrentPage('home');
-      }
-    };
+  return (document.scrollingElement as HTMLElement | null) ?? document.documentElement;
+}
 
-    // Check initial hash
-    handleHashChange();
+function readScrollTop(scrollElement: HTMLElement): number {
+  if (scrollElement === document.documentElement || scrollElement === document.body) {
+    return window.scrollY;
+  }
 
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+  return scrollElement.scrollTop;
+}
+
+function setScrollTop(scrollElement: HTMLElement, top: number): void {
+  if (scrollElement === document.documentElement || scrollElement === document.body) {
+    window.scrollTo({ top, left: 0, behavior: 'auto' });
+    return;
+  }
+
+  scrollElement.scrollTop = top;
+}
+
+function ScrollManager() {
+  const location = useLocation();
+  const navigationType = useNavigationType();
+  const scrollElementRef = useRef<HTMLElement | null>(null);
+  const frameRef = useRef<number | null>(null);
+
+  const routeKey = `${location.pathname}${location.search}${location.hash}`;
+
+  useLayoutEffect(() => {
+    scrollElementRef.current = getScrollElement();
   }, []);
 
+  useEffect(() => {
+    const scrollElement = scrollElementRef.current ?? getScrollElement();
+
+    const onScroll = () => {
+      if (frameRef.current !== null) {
+        return;
+      }
+
+      frameRef.current = window.requestAnimationFrame(() => {
+        frameRef.current = null;
+        scrollPositions.set(routeKey, readScrollTop(scrollElement));
+      });
+    };
+
+    scrollElement.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      scrollElement.removeEventListener('scroll', onScroll);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+        frameRef.current = null;
+      }
+    };
+  }, [routeKey]);
+
+  useLayoutEffect(() => {
+    const scrollElement = scrollElementRef.current ?? getScrollElement();
+
+    if (document.body.style.overflow === 'hidden') {
+      document.body.style.overflow = '';
+    }
+
+    if (navigationType === 'POP') {
+      setScrollTop(scrollElement, scrollPositions.get(routeKey) ?? 0);
+      return;
+    }
+
+    setScrollTop(scrollElement, 0);
+    scrollPositions.set(routeKey, 0);
+  }, [navigationType, routeKey]);
+
+  return null;
+}
+
+function AppRoutes() {
   return (
     <>
-      {currentPage === 'use-cases' ? (
-        <UseCasesPage />
-      ) : currentPage === 'features' ? (
-        <ProductPage />
-      ) : currentPage === 'security' ? (
-        <SecurityPage />
-      ) : currentPage === 'faq' ? (
-        <FAQPage />
-      ) : currentPage === 'release-notes' ? (
-        <ReleaseNotesPage />
-      ) : currentPage === 'request-access' ? (
-        <RequestAccessPage />
-      ) : (
-        <MarketingLandingPage />
-      )}
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<MarketingLandingPage />} />
+        <Route path="/use-cases" element={<UseCasesPage />} />
+        <Route path="/features" element={<ProductPage />} />
+        <Route path="/security" element={<SecurityPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+        <Route path="/release-notes" element={<ReleaseNotesPage />} />
+        <Route path="/request-access" element={<RequestAccessPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <HashRouter>
+      <AppRoutes />
+    </HashRouter>
   );
 }

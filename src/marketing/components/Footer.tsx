@@ -66,16 +66,16 @@ export function Footer() {
           <div className={styles.footerCol}>
             <h4 className={styles.footerColTitle}>Product</h4>
             <ul className={styles.footerLinks}>
-              <li><a href="#features">Features</a></li>
+              <li><a href="#/features">Features</a></li>
               <li><a href="#/security">Security</a></li>
-              <li><a href="#release-notes">Release Notes</a></li>
+              <li><a href="#/release-notes">Release Notes</a></li>
             </ul>
           </div>
           <div className={styles.footerCol}>
             <h4 className={styles.footerColTitle}>Resources</h4>
             <ul className={styles.footerLinks}>
               <li><a href="#/use-cases">Use Cases</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#/faq">FAQ</a></li>
             </ul>
           </div>
           <div className={styles.footerCol}>
