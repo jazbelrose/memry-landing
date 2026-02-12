@@ -181,7 +181,7 @@ export const tabsData = [
   {
     id: 'slides',
     label: 'Slides',
-    icon: 'slides',
+    icon: 'presentation',
     headline: copy.decks.headline,
     body: copy.decks.body,
     features: [...copy.decks.features],
@@ -189,7 +189,7 @@ export const tabsData = [
   {
     id: 'budgets',
     label: 'Budgets',
-    icon: 'budget',
+    icon: 'calculator',
     headline: copy.budgets.headline,
     body: copy.budgets.body,
     features: [...copy.budgets.features],
@@ -197,7 +197,7 @@ export const tabsData = [
   {
     id: 'tasks',
     label: 'Tasks',
-    icon: 'tasks',
+    icon: 'checksquare',
     headline: copy.tasks.headline,
     body: copy.tasks.body,
     features: [...copy.tasks.features],
@@ -205,7 +205,7 @@ export const tabsData = [
   {
     id: 'calendar',
     label: 'Calendar',
-    icon: 'calendar',
+    icon: 'calendardays',
     headline: 'Schedules stay connected to delivery.',
     body: 'Project timelines update as scope and tasks evolve. Deadlines reflect reality, not guesswork.',
     features: [] as string[],
@@ -213,7 +213,7 @@ export const tabsData = [
   {
     id: 'files',
     label: 'Files',
-    icon: 'files',
+    icon: 'folderup',
     headline: copy.files.headline,
     body: copy.files.body,
     features: [...copy.files.features],

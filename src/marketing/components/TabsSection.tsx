@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { copy, tabsData } from '../content/lockedCopy';
-import { SlidesIcon, BudgetIcon, TasksIcon, CalendarIcon, FilesIcon } from './Icons';
+import { FeatureIcon } from './Icons';
 import { Section } from './Section';
 import styles from './TabsSection.module.css';
 
@@ -11,14 +11,6 @@ interface NodeDef {
   y: number;
   label: string;
 }
-
-const iconMap: Record<string, React.FC<{ size?: number }>> = {
-  slides: SlidesIcon,
-  budget: BudgetIcon,
-  tasks: TasksIcon,
-  calendar: CalendarIcon,
-  files: FilesIcon,
-};
 
 const diagrams: Record<string, { nodes: NodeDef[]; edges: [number, number][] }> = {
   slides: {
@@ -165,9 +157,7 @@ export function TabsSection() {
         aria-label="Workspace modules"
         onKeyDown={handleKeyDown}
       >
-        {tabsData.map((t, i) => {
-          const IconComponent = iconMap[t.icon];
-          return (
+        {tabsData.map((t, i) => (
           <button
             key={t.id}
             ref={(el) => {
@@ -181,7 +171,7 @@ export function TabsSection() {
             className={`${styles.tab} ${i === active ? styles.tabActive : ''}`}
             onClick={() => setActive(i)}
           >
-            {IconComponent && <IconComponent size={20} />}
+            <FeatureIcon name={t.icon} size={20} />
             {t.label}
             {i === active && (
               <motion.span
@@ -191,8 +181,7 @@ export function TabsSection() {
               />
             )}
           </button>
-          );
-        })}
+        ))}
       </div>
 
       <AnimatePresence mode="wait">
