@@ -45,16 +45,33 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: auto !important;
+  background: #0A0A0A;
+  min-height: 100%;
 }
 
 body {
   font-family: var(--font);
   background: linear-gradient(180deg, #0B0D10 0%, #0A0A0A 100%);
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: #0A0A0A;
   color: var(--text-primary);
   min-height: 100vh;
+  min-height: 100dvh;
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top);
+  background: #0c0c0c;
+  z-index: 1001;
+  pointer-events: none;
 }
 
 /* ── Grain overlay ──────────────────────────────────────── */
@@ -90,12 +107,24 @@ body::after {
 /* ── Globals ────────────────────────────────────────────── */
 #root {
   min-height: 100vh;
+  min-height: 100dvh;
   scroll-behavior: auto !important;
 }
 
 [data-scroll-container],
 #appScroll {
   scroll-behavior: auto !important;
+}
+
+@supports (-webkit-touch-callout: none) {
+  html {
+    height: -webkit-fill-available;
+  }
+
+  body,
+  #root {
+    min-height: -webkit-fill-available;
+  }
 }
 a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; }
