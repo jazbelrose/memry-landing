@@ -4,8 +4,9 @@
    ═══════════════════════════════════════════════════════════ */
 import { motion } from 'framer-motion';
 import { C, FONT, CX, CY, CW, stagger, fadeIn } from './tokens';
+import { GalaLogo } from './GalaLogo';
 
-const TILES = [
+const TILES: { i: string; n: string; c: string; featured?: boolean }[] = [
   { i: 'M', n: 'memry', c: '#1A2030' },
   { i: 'XC', n: 'XCTN', c: '#1A1E24' },
   { i: 'IS', n: 'Interplay', c: '#14202C' },
@@ -20,7 +21,7 @@ const TILES = [
   { i: 'GD', n: 'GR Design', c: '#1C1C1C' },
   { i: 'HF', n: 'Meridian Co', c: '#1C2A1C' },
   { i: 'KS', n: 'Keys Sound', c: '#2A2418' },
-  { i: 'LG', n: 'LA Gala', c: '#281C1C' },
+  { i: 'LG', n: 'LA Awards Gala', c: '#281C1C', featured: true },
 ];
 
 export function ProjectsScene() {
@@ -60,16 +61,30 @@ export function ProjectsScene() {
         const row = Math.floor(idx / cols);
         const tx = CX + col * (tw + gap);
         const ty = CY + 86 + row * (th + gap);
+        const isFeatured = !!(tile as { featured?: boolean }).featured;
         return (
           <motion.g key={idx} variants={fadeIn}>
-            <rect x={tx} y={ty} width={tw} height={th} rx={8} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+            <rect
+              x={tx} y={ty} width={tw} height={th} rx={8}
+              fill={C.card}
+              stroke={isFeatured ? C.gold : C.border}
+              strokeWidth={isFeatured ? 1.2 : 0.5}
+            />
             {/* Icon square */}
             <rect x={tx + (tw - 36) / 2} y={ty + 10} width={36} height={36} rx={8} fill={tile.c} />
-            <text x={tx + tw / 2} y={ty + 33} fill="#ddd" fontSize={11} fontWeight={600} fontFamily={FONT} textAnchor="middle">
-              {tile.i}
-            </text>
+            {isFeatured ? (
+              <GalaLogo x={tx + (tw - 36) / 2 + 4} y={ty + 12} size={28} fill={C.gold} />
+            ) : (
+              <text x={tx + tw / 2} y={ty + 33} fill="#ddd" fontSize={11} fontWeight={600} fontFamily={FONT} textAnchor="middle">
+                {tile.i}
+              </text>
+            )}
             {/* Name */}
-            <text x={tx + tw / 2} y={ty + 60} fill={C.textSec} fontSize={7.5} fontFamily={FONT} textAnchor="middle">
+            <text
+              x={tx + tw / 2} y={ty + 60}
+              fill={isFeatured ? C.gold : C.textSec}
+              fontSize={7.5} fontWeight={isFeatured ? 600 : 400} fontFamily={FONT} textAnchor="middle"
+            >
               {tile.n}
             </text>
             {/* Status dot */}

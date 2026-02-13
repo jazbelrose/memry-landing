@@ -125,28 +125,81 @@ export function HeroAnimation() {
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         />
 
-        {/* Nav icon placeholders */}
-        {NAV_Y.map((y, i) => (
-          <rect
-            key={i}
-            x={14} y={y}
-            width={20} height={20} rx={5}
-            fill="none"
-            stroke={i === activeNav ? C.accent : C.textMuted}
-            strokeWidth={1.2}
-            opacity={i === activeNav ? 0.9 : 0.3}
-          />
-        ))}
+        {/* Nav icons — drawn shapes matching app sidebar */}
+        {NAV_Y.map((y, i) => {
+          const ix = 14, iy = y, ic = C.textMuted, op = 0.35, sw = 1.2;
+          return (
+            <g key={i} opacity={op}>
+              {/* 0: Layers / Stack — three overlapping cards */}
+              {i === 0 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <rect x={ix + 3} y={iy + 8} width={14} height={9} rx={2} />
+                  <path d={`M${ix + 5} ${iy + 6} h10 a2 2 0 0 1 2 2`} />
+                  <path d={`M${ix + 7} ${iy + 3} h8 a2 2 0 0 1 2 2`} />
+                </g>
+              )}
+              {/* 1: HQ — bold "HQ" text */}
+              {i === 1 && (
+                <text x={ix + 3} y={iy + 15} fill={ic} fontSize={10} fontWeight={700} fontFamily={FONT}>HQ</text>
+              )}
+              {/* 2: Dollar/Budget — document with $ */}
+              {i === 2 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <rect x={ix + 3} y={iy + 1} width={14} height={18} rx={2} />
+                  <text x={ix + 6.5} y={iy + 15} fill={ic} fontSize={10} fontWeight={600} fontFamily={FONT} stroke="none">$</text>
+                </g>
+              )}
+              {/* 3: Building / venue — columns */}
+              {i === 3 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <path d={`M${ix + 3} ${iy + 18} v-12 l7 -4 l7 4 v12`} />
+                  <line x1={ix + 7} y1={iy + 10} x2={ix + 7} y2={iy + 18} />
+                  <line x1={ix + 13} y1={iy + 10} x2={ix + 13} y2={iy + 18} />
+                  <line x1={ix + 3} y1={iy + 18} x2={ix + 17} y2={iy + 18} />
+                </g>
+              )}
+              {/* 4: People — two person silhouettes */}
+              {i === 4 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <circle cx={ix + 7} cy={iy + 6} r={3} />
+                  <path d={`M${ix + 1} ${iy + 18} a6 6 0 0 1 12 0`} />
+                  <circle cx={ix + 15} cy={iy + 6} r={2.5} />
+                  <path d={`M${ix + 10} ${iy + 16} a5 5 0 0 1 10 0`} />
+                </g>
+              )}
+              {/* 5: Chat — speech bubble */}
+              {i === 5 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <rect x={ix + 2} y={iy + 2} width={16} height={12} rx={3} />
+                  <path d={`M${ix + 7} ${iy + 14} l-2 5 l5 -5`} />
+                </g>
+              )}
+              {/* 6: Bell */}
+              {i === 6 && (
+                <g stroke={ic} strokeWidth={sw} fill="none">
+                  <path d={`M${ix + 4} ${iy + 14} v-5 a6 6 0 0 1 12 0 v5`} />
+                  <line x1={ix + 3} y1={iy + 14} x2={ix + 17} y2={iy + 14} />
+                  <circle cx={ix + 10} cy={iy + 17} r={1.5} />
+                </g>
+              )}
+            </g>
+          );
+        })}
 
         {/* Notification badges */}
         <circle cx={36} cy={NAV_Y[5] + 2} r={4} fill={C.accent} />
         <text x={36} y={NAV_Y[5] + 4.5} fill="#fff" fontSize={5} fontFamily={FONT} textAnchor="middle" fontWeight={700}>3</text>
         <circle cx={36} cy={NAV_Y[6] + 2} r={3.5} fill={C.accent} />
 
-        {/* Bottom: search icon + user avatar */}
-        <circle cx={24} cy={VH - 56} r={10} fill="none" stroke={C.textMuted} strokeWidth={1} opacity={0.25} />
+        {/* Bottom: search icon */}
+        <g opacity={0.3}>
+          <circle cx={24} cy={VH - 56} r={8} fill="none" stroke={C.textMuted} strokeWidth={1} />
+          <line x1={30} y1={VH - 50} x2={34} y2={VH - 46} stroke={C.textMuted} strokeWidth={1.2} strokeLinecap="round" />
+        </g>
         {/* Exit arrow */}
-        <line x1={19} y1={VH - 24} x2={29} y2={VH - 24} stroke={C.textMuted} strokeWidth={0.8} opacity={0.3} />
+        <g opacity={0.3}>
+          <path d={`M16 ${VH - 24} h12 M24 ${VH - 28} l4 4 -4 4`} stroke={C.textMuted} strokeWidth={0.8} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        </g>
         {/* Avatar */}
         <circle cx={24} cy={VH - 8} r={9} fill={C.card} stroke={C.border} strokeWidth={0.5} />
 

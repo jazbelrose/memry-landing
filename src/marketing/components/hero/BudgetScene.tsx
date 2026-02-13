@@ -4,6 +4,7 @@
    ═══════════════════════════════════════════════════════════ */
 import { motion } from 'framer-motion';
 import { C, FONT, MONO, CX, CY, CW, stagger, fadeIn, fadeInSlow, EASE } from './tokens';
+import { GalaLogo } from './GalaLogo';
 
 const LINE_ITEMS = [
   { code: 'PARKING-FUEL-TOLLS-0018', cat: 'PARKING, FUEL, TOLLS', qty: '1 Lot', cost: '$220', mk: '0%', price: '$220' },
@@ -26,7 +27,7 @@ export function BudgetScene() {
     <motion.g variants={stagger} initial="hidden" animate="show">
       {/* ── Project name ── */}
       <motion.g variants={fadeIn}>
-        <rect x={CX - 2} y={CY + 4} width={20} height={20} rx={5} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+        <GalaLogo x={CX - 2} y={CY + 4} size={20} />
         <text x={CX + 24} y={CY + 18} fill={C.text} fontSize={12} fontWeight={500} fontFamily={FONT}>LA Awards Week Gala</text>
       </motion.g>
 

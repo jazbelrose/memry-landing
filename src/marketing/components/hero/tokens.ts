@@ -35,6 +35,8 @@ export const C = {
   white03: 'rgba(255,255,255,0.03)',
   white05: 'rgba(255,255,255,0.05)',
   white08: 'rgba(255,255,255,0.08)',
+
+  cream: '#F8F6F0',
 } as const;
 
 // ── Typography ──
@@ -61,7 +63,7 @@ export type SceneId = (typeof SCENES)[number];
 
 export const SCENE_DURATION: Record<SceneId, number> = {
   projects: 2400,
-  slides: 2200,
+  slides: 3200,
   budget: 2600,
   calendar: 2200,
   hq: 2600,
