@@ -45,7 +45,7 @@ export const MONO = "'SF Mono', Monaco, Consolas, monospace";
 
 // ── ViewBox dimensions ──
 export const VW = 960;
-export const VH = 540;
+export const VH = 570;
 export const SB_W = 48; // sidebar width
 
 // Content area (with 16px padding from sidebar edge)

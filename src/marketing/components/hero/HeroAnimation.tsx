@@ -189,13 +189,10 @@ export function HeroAnimation() {
           <circle cx={24} cy={VH - 72} r={8} fill="none" stroke={C.textMuted} strokeWidth={1} />
           <line x1={30} y1={VH - 66} x2={34} y2={VH - 62} stroke={C.textMuted} strokeWidth={1.2} strokeLinecap="round" />
         </g>
-        {/* Exit arrow */}
-        <g opacity={0.3}>
-          <path d={`M16 ${VH - 42} h12 M24 ${VH - 46} l4 4 -4 4`} stroke={C.textMuted} strokeWidth={0.8} fill="none" strokeLinecap="round" strokeLinejoin="round" />
-        </g>
+     
         {/* Avatar */}
-        <circle cx={24} cy={VH - 22} r={9} fill={C.card} stroke={C.border} strokeWidth={0.5} />
-        <text x={24} y={VH - 19} fill={C.textMuted} fontSize={7} fontWeight={600} fontFamily={FONT} textAnchor="middle">JR</text>
+        <circle cx={24} cy={VH - 32} r={9} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+        <text x={24} y={VH - 29} fill={C.textMuted} fontSize={7} fontWeight={600} fontFamily={FONT} textAnchor="middle">JR</text>
 
         {/* ═══ Content area (clipped) ═══ */}
         <g clipPath="url(#heroContentClip)">
