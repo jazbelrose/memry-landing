@@ -117,17 +117,7 @@ export function HeroAnimation() {
         <line x1={24} y1={65} x2={24} y2={75} stroke="#fff" strokeWidth={1.6} strokeLinecap="round" />
         <line x1={19} y1={70} x2={29} y2={70} stroke="#fff" strokeWidth={1.6} strokeLinecap="round" />
 
-        {/* Active nav indicator (spring-animated) */}
-        <motion.rect
-          x={6}
-          width={36}
-          height={28}
-          rx={7}
-          fill={C.accentDim}
-          animate={{ y: NAV_Y[activeNav] - 4 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        />
-
+     
         {/* Nav icons — drawn shapes matching app sidebar */}
         {NAV_Y.map((y, i) => {
           const ix = 14, iy = y, ic = C.textMuted, op = 0.35, sw = 1.2;
