@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
+  height: var(--nav-total-height);
   z-index: 100000;
 background: rgba(12, 12, 12, 0.55);
   backdrop-filter: blur(14px);
@@ -13,12 +14,13 @@ background: rgba(12, 12, 12, 0.55);
 }
 
 .inner {
+  height: var(--nav-content-height);
   max-width: 1120px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px var(--space-lg);
+  padding: 0 var(--space-lg);
 }
 
 .left {
@@ -59,6 +61,151 @@ background: rgba(12, 12, 12, 0.55);
   gap: 32px;
 }
 
+.desktopCta {
+  display: inline-flex;
+}
+
+.hamburger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburgerLine {
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-primary);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  background: var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: calc(var(--space-3xl) + env(safe-area-inset-top)) var(--space-lg) calc(var(--space-2xl) + env(safe-area-inset-bottom));
+}
+
+.overlayClose {
+  position: absolute;
+  top: calc(var(--space-md) + env(safe-area-inset-top));
+  right: var(--space-md);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.overlayCloseLine {
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-primary);
+}
+
+.overlayCloseLine:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.overlayCloseLine:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.overlayBranding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.overlayLogo {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overlayLogoIcon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.overlayChip {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: var(--brand-08);
+  color: var(--brand);
+  letter-spacing: 0.02em;
+}
+
+.overlayLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.overlayLink {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.overlayLink:hover {
+  color: var(--text-primary);
+}
+
+.overlayCta {
+  margin-top: var(--space-md);
+}
+
 .link {
   font-size: 14px;
   font-weight: 500;
@@ -69,4 +216,20 @@ background: rgba(12, 12, 12, 0.55);
 
 .link:hover {
   color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 var(--space-md);
+  }
+
+  .chip,
+  .links,
+  .desktopCta {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
 }

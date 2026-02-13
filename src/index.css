@@ -35,6 +35,8 @@
   --space-4xl: 96px;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nav-content-height: 66px;
+  --nav-total-height: calc(var(--nav-content-height) + env(safe-area-inset-top));
 }
 
 /* ── Reset ──────────────────────────────────────────────── */
@@ -113,7 +115,7 @@ body::after {
   top: 0;
   left: 0;
   right: 0;
-  height: 70px; /* Larger than any safe area to guarantee coverage */
+  height: var(--nav-total-height);
   background: rgba(12, 12, 12, 0.55);
   backdrop-filter: blur(14px);
   box-shadow: inset ;

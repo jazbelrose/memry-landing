@@ -1,9 +1,13 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { copy, tabsData } from '../content/lockedCopy';
 import { FeatureIcon } from './Icons';
 import { Section } from './Section';
 import styles from './TabsSection.module.css';
+
+const MagicLayoutDemo = lazy(() =>
+  import('./MagicLayoutDemo').then((m) => ({ default: m.MagicLayoutDemo })),
+);
 
 /* ── Abstract diagram per tab ─────────────────────────── */
 interface NodeDef {
@@ -208,7 +212,13 @@ export function TabsSection() {
             )}
           </div>
           <div className={styles.panelDiagram}>
-            <TabDiagram tabId={tab.id} />
+            {tab.id === 'slides' ? (
+              <Suspense fallback={<TabDiagram tabId="slides" />}>
+                <MagicLayoutDemo />
+              </Suspense>
+            ) : (
+              <TabDiagram tabId={tab.id} />
+            )}
           </div>
         </motion.div>
       </AnimatePresence>
