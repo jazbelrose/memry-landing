@@ -45,7 +45,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: auto !important;
-  background: #0A0A0A;
+  /* Paint viewport layer to prevent Safari bleed when pulling down */
+  background: #0B0D10;
   min-height: 100%;
 }
 
@@ -103,6 +104,22 @@ body::after {
   transition: top 0.2s ease;
 }
 .skip-to-content:focus { top: 16px; outline: 2px solid var(--brand); outline-offset: 2px; }
+
+/* ── iOS Viewport Shield ────────────────────────────────── */
+/* Permanent top shield at viewport layer (outside React tree) */
+/* Prevents Safari rubber-band/peek from revealing canvas behind page */
+#ios-viewport-shield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px; /* Larger than any safe area to guarantee coverage */
+  background: rgba(12, 12, 12, 0.55);
+  backdrop-filter: blur(14px);
+  box-shadow: inset ;
+  z-index: 99999; /* Above everything */
+  pointer-events: none; /* Never interferes with interactions */
+}
 
 /* ── Globals ────────────────────────────────────────────── */
 #root {
