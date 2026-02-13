@@ -66,7 +66,7 @@ This is how you scale repeatable work without repeating yourself.`,
   budgets: {
     headline: 'Budgets stay connected to scope, margin, and reality.',
     supportLine: 'Structured line items. Real-time totals. Linked to tasks and delivery.',
-    body: `Paste a paragraph—Memry turns it into line items, keeps cost/markup/price in sync, links lines to tasks, and updates margin automatically as spend is reconciled.`,
+    body: `Paste a paragraph memry turns it into line items, keeps cost/markup/price in sync, links lines to tasks, and updates margin automatically as spend is reconciled.`,
     features: [
       'Natural language → line items',
       'Cost / markup / client price model',
@@ -194,9 +194,14 @@ export const tabsData = [
     id: 'calendar',
     label: 'Calendar',
     icon: 'calendardays',
-    headline: 'Schedules stay connected to delivery.',
-    body: 'Project timelines update as scope and tasks evolve. Deadlines reflect reality, not guesswork.',
-    features: [] as string[],
+    headline: 'Schedule events, focus blocks, and milestones with ICS export.',
+    body: 'One click → tasks + calendar blocks. Focus blocks for deep work. Track milestones. Export ICS feed for external sync.',
+    features: [
+      'One click → tasks + calendar blocks',
+      'Focus blocks for deep work',
+      'Milestone tracking',
+      'ICS feed export',
+    ] as string[],
   },
 ];
 
