@@ -89,25 +89,24 @@ export function BudgetScene() {
         <motion.circle
           cx={donutCx} cy={donutCy} r={donutR}
           fill="none" stroke={C.gold} strokeWidth={13}
-          strokeDasharray={`${0.76 * circumference} ${circumference}`}
-          strokeDashoffset={circumference * 0.25}
+          strokeDasharray={circumference}
           strokeLinecap="round"
           opacity={0.8}
+          transform={`rotate(-90 ${donutCx} ${donutCy})`}
           initial={{ strokeDashoffset: circumference }}
-          animate={{ strokeDashoffset: circumference * 0.25 }}
+          animate={{ strokeDashoffset: circumference * (1 - 0.76) }}
           transition={{ duration: 1.2, ease: EASE, delay: 0.5 }}
         />
         {/* Margin arc (24%) */}
         <motion.circle
           cx={donutCx} cy={donutCy} r={donutR}
           fill="none" stroke={C.textMuted} strokeWidth={13}
-          strokeDasharray={`${0.24 * circumference} ${circumference}`}
-          strokeDashoffset={circumference * 0.25 - 0.76 * circumference}
+          strokeDasharray={circumference}
           strokeLinecap="round"
-          opacity={0.35}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.35 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
+          transform={`rotate(${-90 + 0.76 * 360} ${donutCx} ${donutCy})`}
+          initial={{ strokeDashoffset: circumference, opacity: 0 }}
+          animate={{ strokeDashoffset: circumference * (1 - 0.24), opacity: 0.35 }}
+          transition={{ duration: 0.6, ease: EASE, delay: 1.2 }}
         />
         {/* Center label */}
         <text x={donutCx} y={donutCy - 2} fill={C.text} fontSize={11} fontWeight={700} fontFamily={MONO} textAnchor="middle">$276,130</text>
