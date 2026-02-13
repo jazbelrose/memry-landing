@@ -27,7 +27,7 @@ Every change should ripple across the whole workflow instantly.`,
 
   solution: {
     headline: "Everything in one workspace",
-    subheadline: "Five integrated modules. One source of truth.",
+    subheadline: "Concept → Budget → Schedule. Connected.",
     body: `memry connects the pieces that normally drift apart:
 Decks, budgets, tasks, calendars, files, approvals, and project communication.
 When the budget changes, the task plan updates.
@@ -52,16 +52,14 @@ This is how you scale repeatable work without repeating yourself.`,
   },
 
   decks: {
-    headline: 'Decks are version-controlled and built for client-facing work.',
-    body: `memry includes a multi-slide editor designed for concept decks, client previews,
-and production-ready documentation.
-No overwriting.
-No "final_v7."
-No misaligned versions between the designer, producer, and client.`,
+    headline: 'Slide Decks',
+    subheadline: 'Produce on-brand, client-ready decks in minutes. Generate layouts, shuffle variants, and remix on the fly.',
+    body: `Produce on-brand, client-ready decks in minutes. Generate layouts, shuffle variants, and remix on the fly.`,
     features: [
-      'Built-in slide editor (real-time)',
-      'Create preview versions without risk',
-      'Export to PDF anytime',
+      'Magic Layout (generate + shuffle + remix)',
+      'Real-time collaboration',
+      'Versioning: Draft → Approved → Archived',
+      'One-click PDF export',
     ],
   },
 
@@ -188,19 +186,11 @@ export const tabsData = [
   },
   {
     id: 'budgets',
-    label: 'Budgets',
+    label: 'Budget',
     icon: 'calculator',
     headline: copy.budgets.headline,
     body: copy.budgets.body,
     features: [...copy.budgets.features],
-  },
-  {
-    id: 'tasks',
-    label: 'Tasks',
-    icon: 'checksquare',
-    headline: copy.tasks.headline,
-    body: copy.tasks.body,
-    features: [...copy.tasks.features],
   },
   {
     id: 'calendar',
@@ -209,14 +199,6 @@ export const tabsData = [
     headline: 'Schedules stay connected to delivery.',
     body: 'Project timelines update as scope and tasks evolve. Deadlines reflect reality, not guesswork.',
     features: [] as string[],
-  },
-  {
-    id: 'files',
-    label: 'Files',
-    icon: 'folderup',
-    headline: copy.files.headline,
-    body: copy.files.body,
-    features: [...copy.files.features],
   },
 ];
 

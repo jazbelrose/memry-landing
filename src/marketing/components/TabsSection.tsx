@@ -9,6 +9,10 @@ const MagicLayoutDemo = lazy(() =>
   import('./MagicLayoutDemo').then((m) => ({ default: m.MagicLayoutDemo })),
 );
 
+const BudgetSpellbookDemo = lazy(() =>
+  import('./BudgetSpellbookDemo').then((m) => ({ default: m.BudgetSpellbookDemo })),
+);
+
 /* ── Abstract diagram per tab ─────────────────────────── */
 interface NodeDef {
   x: number;
@@ -215,6 +219,10 @@ export function TabsSection() {
             {tab.id === 'slides' ? (
               <Suspense fallback={<TabDiagram tabId="slides" />}>
                 <MagicLayoutDemo />
+              </Suspense>
+            ) : tab.id === 'budgets' ? (
+              <Suspense fallback={<TabDiagram tabId="budgets" />}>
+                <BudgetSpellbookDemo />
               </Suspense>
             ) : (
               <TabDiagram tabId={tab.id} />

@@ -53,7 +53,13 @@ export function HeroSection() {
           >
             {copy.hero.primaryCta}
           </Button>
-          <Button variant="secondary" Icon={Play}>{copy.hero.secondaryCta}</Button>
+          <Button 
+            variant="secondary" 
+            Icon={Play}
+            onClick={() => { document.getElementById('workspace')?.scrollIntoView({ behavior: 'smooth' }); }}
+          >
+            {copy.hero.secondaryCta}
+          </Button>
         </motion.div>
 
         {/* Product UI animation — real memry scenes */}

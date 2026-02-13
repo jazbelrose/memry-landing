@@ -1,0 +1,30 @@
+/* ── BudgetSpellbookDemo — SVG container ─────────────── */
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1200 / 700;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: default;
+  /* subtle ambient glow */
+  box-shadow: 0 0 40px rgba(250, 51, 86, 0.04);
+}
+
+.wrapper svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Reduced motion: skip to static final state */
+@media (prefers-reduced-motion: reduce) {
+  .wrapper svg * {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 100%;
+  }
+}
