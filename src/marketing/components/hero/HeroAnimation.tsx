@@ -4,6 +4,7 @@
    ═══════════════════════════════════════════════════════════ */
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { Layers, Receipt, Landmark, Users, MessageSquare, Bell } from 'lucide-react';
 import {
   C, FONT, VW, VH, SB_W,
   EASE, SCENES, SceneId, SCENE_DURATION, SCENE_NAV, NAV_Y,
@@ -123,57 +124,75 @@ export function HeroAnimation() {
           const ix = 14, iy = y, ic = C.textMuted, op = 0.35, sw = 1.2;
           return (
             <g key={i} opacity={op}>
-              {/* 0: Layers / Stack — three overlapping cards */}
+              {/* 0: Layers */}
               {i === 0 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <rect x={ix + 3} y={iy + 8} width={14} height={9} rx={2} />
-                  <path d={`M${ix + 5} ${iy + 6} h10 a2 2 0 0 1 2 2`} />
-                  <path d={`M${ix + 7} ${iy + 3} h8 a2 2 0 0 1 2 2`} />
-                </g>
+                <Layers
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
               {/* 1: HQ — bold "HQ" text */}
               {i === 1 && (
                 <text x={ix + 3} y={iy + 15} fill={ic} fontSize={10} fontWeight={700} fontFamily={FONT}>HQ</text>
               )}
-              {/* 2: Dollar/Budget — document with $ */}
+              {/* 2: Docs */}
               {i === 2 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <rect x={ix + 3} y={iy + 1} width={14} height={18} rx={2} />
-                  <text x={ix + 6.5} y={iy + 15} fill={ic} fontSize={10} fontWeight={600} fontFamily={FONT} stroke="none">$</text>
-                </g>
+                <Receipt
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
-              {/* 3: Building / venue — columns */}
+              {/* 3: Building */}
               {i === 3 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <path d={`M${ix + 3} ${iy + 18} v-12 l7 -4 l7 4 v12`} />
-                  <line x1={ix + 7} y1={iy + 10} x2={ix + 7} y2={iy + 18} />
-                  <line x1={ix + 13} y1={iy + 10} x2={ix + 13} y2={iy + 18} />
-                  <line x1={ix + 3} y1={iy + 18} x2={ix + 17} y2={iy + 18} />
-                </g>
+                <Landmark
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
-              {/* 4: People — two person silhouettes */}
+              {/* 4: People */}
               {i === 4 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <circle cx={ix + 7} cy={iy + 6} r={3} />
-                  <path d={`M${ix + 1} ${iy + 18} a6 6 0 0 1 12 0`} />
-                  <circle cx={ix + 15} cy={iy + 6} r={2.5} />
-                  <path d={`M${ix + 10} ${iy + 16} a5 5 0 0 1 10 0`} />
-                </g>
+                <Users
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
-              {/* 5: Chat — speech bubble */}
+              {/* 5: Chat */}
               {i === 5 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <rect x={ix + 2} y={iy + 2} width={16} height={12} rx={3} />
-                  <path d={`M${ix + 7} ${iy + 14} l-2 5 l5 -5`} />
-                </g>
+                <MessageSquare
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
               {/* 6: Bell */}
               {i === 6 && (
-                <g stroke={ic} strokeWidth={sw} fill="none">
-                  <path d={`M${ix + 4} ${iy + 14} v-5 a6 6 0 0 1 12 0 v5`} />
-                  <line x1={ix + 3} y1={iy + 14} x2={ix + 17} y2={iy + 14} />
-                  <circle cx={ix + 10} cy={iy + 17} r={1.5} />
-                </g>
+                <Bell
+                  x={ix + 2}
+                  y={iy + 2}
+                  width={16}
+                  height={16}
+                  color={ic}
+                  strokeWidth={1.6}
+                />
               )}
             </g>
           );
