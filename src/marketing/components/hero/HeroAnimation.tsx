@@ -99,20 +99,23 @@ export function HeroAnimation() {
         </defs>
 
         {/* ═══ Background ═══ */}
-        <rect width={VW} height={VH} fill={C.bg} rx={12} />
+        <rect width={VW} height={VH} fill={C.bg} rx={8} />
 
         {/* ═══ Sidebar ═══ */}
         <rect x={0} y={0} width={SB_W} height={VH} fill={C.surface} />
         <line x1={SB_W} y1={0} x2={SB_W} y2={VH} stroke={C.border} strokeWidth={1} />
 
-        {/* Logo (nested squares) */}
-        <rect x={12} y={14} width={24} height={24} rx={6} fill="none" stroke={C.textSec} strokeWidth={1.2} opacity={0.5} />
-        <rect x={17} y={19} width={14} height={14} rx={3} fill="none" stroke={C.textSec} strokeWidth={1} opacity={0.3} />
+        {/* memry logo mark — scaled from 180×180 source */}
+        <g transform="translate(14,16) scale(0.11)" opacity={0.85}>
+          <path d="M167.4,111c1.2,2.2 1.8,4.6 1.8,7.2c0,5.1-2.6,9.9-6.8,12.7l-61.2,40.7c-7,4.7-16.2,4.7-23.2,0l-61.2-40.7c-4.3-2.8-6.8-7.6-6.8-12.7c0-2.5.6-5 1.8-7.2c1.2,2.2 2.9,4.2 5.1,5.6l61.2,40.7c7,4.7 16.2,4.7 23.2,0l61.2-40.7c2.2-1.4 3.9-3.4 5.1-5.6Z" fill="#fff"/>
+          <path d="M167.4,82.4c1.2,2.2 1.8,4.6 1.8,7.2c0,5.1-2.6,9.9-6.8,12.7l-61.2,40.7c-7,4.7-16.2,4.7-23.2,0l-61.2-40.7c-4.3-2.8-6.8-7.6-6.8-12.7c0-2.5.6-5 1.8-7.2c1.2,2.2 2.9,4.2 5.1,5.6l61.1,40.6c7.1,4.7 16.4,4.7 23.5,0l61.1-40.6c2.2-1.4 3.9-3.4 5.1-5.6Z" fill="#fff"/>
+          <path d="M76,8.7c8.2-5.5 18.9-5.5 27.1,0l59.3,39.4c4.3,2.8 6.8,7.6 6.8,12.7c0,5.1-2.6,9.9-6.8,12.7l-59.3,39.4c-8.2,5.5-18.9,5.5-27.1,0l-59.3-39.4c-4.3-2.8-6.8-7.6-6.8-12.7c0-5.1 2.6-9.9 6.8-12.7l59.3-39.4Zm16.7,38.8l-.7.6-24.7,16.6c-4.1,2.7-4.5,6.8-1.2,9c3.4,2.2 9.5,1.8 13.6-.9l24.8-16.7.8-.5c1.6-.8 3.1-.9 3.4-.9c.3,0 2.4-.2 3.9.8l0,0c2,1.3 1.7,3.8-.7,5.4l-24.8,16.7c-4.1,2.8-4.5,6.9-1.2,9.1c3.4,2.2 9.6,1.8 13.7-.9l24.8-16.7c10.6-7.1 11.9-17.7 2.9-23.4c-5.6-3.6-12.8-3.7-14-3.7c-.1-.9-.4-5.5-5.9-9.1c-3.4-2.2-9.3-4.1-17.1-3.6c-10.3.7-17,5.2-18.2,6l-24.6,16.6c-4.1,2.7-4.5,6.8-1.2,9c3.4,2.2 9.5,1.8 13.6-.9l24.7-16.6c1.8-1.2 3.8-1.4 4.2-1.4c.3,0 2.4-.2 3.9.8l0,0c1.8,1.1 1.7,3.3 0,4.8Z" fill="#fff"/>
+        </g>
 
         {/* Create button */}
-        <rect x={10} y={56} width={28} height={28} rx={14} fill={C.accent} />
-        <line x1={24} y1={65} x2={24} y2={77} stroke="#fff" strokeWidth={1.8} strokeLinecap="round" />
-        <line x1={18} y1={71} x2={30} y2={71} stroke="#fff" strokeWidth={1.8} strokeLinecap="round" />
+        <circle cx={24} cy={70} r={12} fill={C.accent} />
+        <line x1={24} y1={65} x2={24} y2={75} stroke="#fff" strokeWidth={1.6} strokeLinecap="round" />
+        <line x1={19} y1={70} x2={29} y2={70} stroke="#fff" strokeWidth={1.6} strokeLinecap="round" />
 
         {/* Active nav indicator (spring-animated) */}
         <motion.rect
@@ -193,15 +196,16 @@ export function HeroAnimation() {
 
         {/* Bottom: search icon */}
         <g opacity={0.3}>
-          <circle cx={24} cy={VH - 56} r={8} fill="none" stroke={C.textMuted} strokeWidth={1} />
-          <line x1={30} y1={VH - 50} x2={34} y2={VH - 46} stroke={C.textMuted} strokeWidth={1.2} strokeLinecap="round" />
+          <circle cx={24} cy={VH - 72} r={8} fill="none" stroke={C.textMuted} strokeWidth={1} />
+          <line x1={30} y1={VH - 66} x2={34} y2={VH - 62} stroke={C.textMuted} strokeWidth={1.2} strokeLinecap="round" />
         </g>
         {/* Exit arrow */}
         <g opacity={0.3}>
-          <path d={`M16 ${VH - 24} h12 M24 ${VH - 28} l4 4 -4 4`} stroke={C.textMuted} strokeWidth={0.8} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          <path d={`M16 ${VH - 42} h12 M24 ${VH - 46} l4 4 -4 4`} stroke={C.textMuted} strokeWidth={0.8} fill="none" strokeLinecap="round" strokeLinejoin="round" />
         </g>
         {/* Avatar */}
-        <circle cx={24} cy={VH - 8} r={9} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+        <circle cx={24} cy={VH - 22} r={9} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+        <text x={24} y={VH - 19} fill={C.textMuted} fontSize={7} fontWeight={600} fontFamily={FONT} textAnchor="middle">JR</text>
 
         {/* ═══ Content area (clipped) ═══ */}
         <g clipPath="url(#heroContentClip)">

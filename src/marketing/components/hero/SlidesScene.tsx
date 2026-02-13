@@ -77,6 +77,8 @@ export function SlidesScene() {
           <stop offset="0%" stopColor="rgba(255,255,255,0.02)" />
           <stop offset="100%" stopColor="rgba(0,0,0,0.15)" />
         </radialGradient>
+        {/* Classic pointer cursor — white fill, black outline, tip at (0,0) */}
+        <path id="cursorArrow" d="M0,0 L0,15.5 L4.2,12 L7,17.5 L9.2,16.3 L6.3,10.8 L11,10.8 Z" fill="#fff" stroke="#111" strokeWidth={0.7} strokeLinejoin="round" />
       </defs>
 
       {/* ── Project name ── */}
@@ -226,14 +228,11 @@ export function SlidesScene() {
 
       {/* ═══ YJS Real-time Collaboration ═══ */}
 
-      {/* ── Collaborator cursor #1 (JB) — drifts in near "Awards" ── */}
+      {/* ── Collaborator cursor #1 (JB) — past "Awards" ── */}
       <motion.g variants={cursorDrift(1.0, 40, -20)}>
-        <polygon
-          points={`${canvasX + 260},${CY + 177} ${canvasX + 264},${CY + 192} ${canvasX + 270},${CY + 186}`}
-          fill="#2D9CDB"
-        />
-        <rect x={canvasX + 264} y={CY + 191} width={22} height={12} rx={3} fill="#2D9CDB" />
-        <text x={canvasX + 268} y={CY + 200} fill="#fff" fontSize={6} fontWeight={600} fontFamily={FONT}>JB</text>
+        <use href="#cursorArrow" transform={`translate(${canvasX + 280},${CY + 178})`} />
+        <rect x={canvasX + 284} y={CY + 197} width={22} height={12} rx={3} fill="#2D9CDB" />
+        <text x={canvasX + 288} y={CY + 206} fill="#fff" fontSize={6} fontWeight={600} fontFamily={FONT}>JB</text>
       </motion.g>
 
       {/* ── Selection highlight — JB selecting "Week" ── */}
@@ -249,14 +248,11 @@ export function SlidesScene() {
         strokeWidth={0.5}
       />
 
-      {/* ── Collaborator cursor #2 (RT) — near subtitle ── */}
-      <motion.g variants={cursorDrift(1.4, -30, 30)}>
-        <polygon
-          points={`${canvasX + canvasW - 235},${CY + 340} ${canvasX + canvasW - 231},${CY + 355} ${canvasX + canvasW - 225},${CY + 349}`}
-          fill="#E6994A"
-        />
-        <rect x={canvasX + canvasW - 231} y={CY + 354} width={20} height={12} rx={3} fill="#E6994A" />
-        <text x={canvasX + canvasW - 228} y={CY + 363} fill="#fff" fontSize={6} fontWeight={600} fontFamily={FONT}>RT</text>
+      {/* ── Collaborator cursor #2 (RT) — empty mid-canvas area ── */}
+      <motion.g variants={cursorDrift(1.4, -30, 20)}>
+        <use href="#cursorArrow" transform={`translate(${canvasX + 320},${CY + 380})`} />
+        <rect x={canvasX + 324} y={CY + 399} width={20} height={12} rx={3} fill="#E6994A" />
+        <text x={canvasX + 327} y={CY + 408} fill="#fff" fontSize={6} fontWeight={600} fontFamily={FONT}>RT</text>
       </motion.g>
 
       {/* ── Own user typing cursor — blinking bar after "Gala." ── */}
@@ -272,25 +268,25 @@ export function SlidesScene() {
         fill={C.cream}
       />
 
-      {/* ── Comment popover (slides in from right) ── */}
+      {/* ── Comment popover (slides in from right — inside viewBox) ── */}
       <motion.g variants={commentSlide}>
-        {/* Add-comment accent circle */}
-        <circle cx={canvasX + canvasW + 4} cy={CY + 150} r={8} fill={C.accent} />
-        <line x1={canvasX + canvasW + 1} y1={CY + 150} x2={canvasX + canvasW + 7} y2={CY + 150} stroke="#fff" strokeWidth={1.2} strokeLinecap="round" />
-        <line x1={canvasX + canvasW + 4} y1={CY + 147} x2={canvasX + canvasW + 4} y2={CY + 153} stroke="#fff" strokeWidth={1.2} strokeLinecap="round" />
-        {/* Card */}
-        <rect x={canvasX + canvasW + 16} y={CY + 138} width={130} height={64} rx={6} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+        {/* "+" button anchored at canvas right edge */}
+        <circle cx={canvasX + canvasW - 8} cy={CY + 148} r={8} fill={C.accent} />
+        <line x1={canvasX + canvasW - 11} y1={CY + 148} x2={canvasX + canvasW - 5} y2={CY + 148} stroke="#fff" strokeWidth={1.2} strokeLinecap="round" />
+        <line x1={canvasX + canvasW - 8} y1={CY + 145} x2={canvasX + canvasW - 8} y2={CY + 151} stroke="#fff" strokeWidth={1.2} strokeLinecap="round" />
+        {/* Card — floats over the empty right side of the canvas */}
+        <rect x={canvasX + canvasW - 140} y={CY + 160} width={132} height={66} rx={6} fill={C.card} stroke={C.border} strokeWidth={0.5} />
         {/* Commenter avatar + name */}
-        <circle cx={canvasX + canvasW + 30} cy={CY + 152} r={6} fill="#E6994A" />
-        <text x={canvasX + canvasW + 30} y={CY + 154.5} fill="#fff" fontSize={5} fontWeight={600} fontFamily={FONT} textAnchor="middle">RT</text>
-        <text x={canvasX + canvasW + 40} y={CY + 155} fill={C.text} fontSize={7} fontWeight={500} fontFamily={FONT}>Rachel T.</text>
-        <text x={canvasX + canvasW + 100} y={CY + 155} fill={C.textMuted} fontSize={6} fontFamily={FONT}>just now</text>
+        <circle cx={canvasX + canvasW - 126} cy={CY + 174} r={6} fill="#E6994A" />
+        <text x={canvasX + canvasW - 126} y={CY + 176.5} fill="#fff" fontSize={5} fontWeight={600} fontFamily={FONT} textAnchor="middle">RT</text>
+        <text x={canvasX + canvasW - 116} y={CY + 177} fill={C.text} fontSize={7} fontWeight={500} fontFamily={FONT}>Rachel T.</text>
+        <text x={canvasX + canvasW - 56} y={CY + 177} fill={C.textMuted} fontSize={6} fontFamily={FONT}>just now</text>
         {/* Comment text */}
-        <text x={canvasX + canvasW + 24} y={CY + 170} fill={C.textSec} fontSize={7} fontFamily={FONT}>Love the title card look!</text>
-        <text x={canvasX + canvasW + 24} y={CY + 182} fill={C.textSec} fontSize={7} fontFamily={FONT}>Can we try gold accent?</text>
+        <text x={canvasX + canvasW - 132} y={CY + 192} fill={C.textSec} fontSize={7} fontFamily={FONT}>Love the title card look!</text>
+        <text x={canvasX + canvasW - 132} y={CY + 204} fill={C.textSec} fontSize={7} fontFamily={FONT}>Can we try gold accent?</text>
         {/* Reply input */}
-        <rect x={canvasX + canvasW + 24} y={CY + 188} width={112} height={10} rx={3} fill={C.white05} />
-        <text x={canvasX + canvasW + 30} y={CY + 196} fill={C.textMuted} fontSize={5.5} fontFamily={FONT}>Add a comment...</text>
+        <rect x={canvasX + canvasW - 132} y={CY + 210} width={114} height={10} rx={3} fill={C.white05} />
+        <text x={canvasX + canvasW - 126} y={CY + 218} fill={C.textMuted} fontSize={5.5} fontFamily={FONT}>Add a comment...</text>
       </motion.g>
 
       {/* ── Subtitle block — bottom-right ── */}
