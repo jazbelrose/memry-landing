@@ -58,7 +58,7 @@ export const CH = 512;
 export const EASE: [number, number, number, number] = [0.25, 0.1, 0.25, 1.0];
 
 // ── Scene config ──
-export const SCENES = ['projects', 'slides', 'budget', 'calendar', 'hq'] as const;
+export const SCENES = ['slides', 'budget', 'calendar', 'hq','projects'] as const;
 export type SceneId = (typeof SCENES)[number];
 
 export const SCENE_DURATION: Record<SceneId, number> = {
