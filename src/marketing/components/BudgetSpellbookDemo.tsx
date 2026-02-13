@@ -68,7 +68,7 @@ const NEW_ROW_ITEMS = [
 
 /* ── Modal constants ────────────────────────────────────── */
 const MOD_W = 900;
-const MOD_H = 580;
+const MOD_H = 640;
 const MOD_X = (W - MOD_W) / 2;
 const MOD_Y = (H - MOD_H) / 2;
 const MOD_R = 14;
@@ -807,7 +807,7 @@ export function BudgetSpellbookDemo() {
     const BAR_MAX_W = RP_W - 80;
 
     /* Bottom controls */
-    const ctrlY = MOD_Y + MOD_H - 52;
+    const ctrlY = MOD_Y + MOD_H - 68;
 
     return (
       <g>

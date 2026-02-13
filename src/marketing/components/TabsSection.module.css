@@ -53,13 +53,13 @@
 /* ── Panel ───────────────────────────────────────────── */
 .panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 7fr;
   gap: var(--space-xl);
   align-items: center;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   min-height: 280px;

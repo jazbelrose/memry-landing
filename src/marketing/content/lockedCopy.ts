@@ -66,14 +66,12 @@ This is how you scale repeatable work without repeating yourself.`,
   budgets: {
     headline: 'Budgets stay connected to scope, margin, and reality.',
     supportLine: 'Structured line items. Real-time totals. Linked to tasks and delivery.',
-    body: `Budgets in memry aren't spreadsheets. They're a live model.
-Cost, markup, and client price stay visible.
-Line items link to tasks and deliverables.
-As spend comes in, reconciliation updates margin — without manual cleanup.`,
+    body: `Paste a paragraph—Memry turns it into line items, keeps cost/markup/price in sync, links lines to tasks, and updates margin automatically as spend is reconciled.`,
     features: [
-      'Cost / markup / price model',
-      'Task-linked line items',
-      'Margin updates automatically',
+      'Natural language → line items',
+      'Cost / markup / client price model',
+      'Task-linked budget lines',
+      'Margin updates from actual spend',
     ],
   },
 

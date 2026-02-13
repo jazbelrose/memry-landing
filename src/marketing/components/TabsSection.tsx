@@ -13,6 +13,10 @@ const BudgetSpellbookDemo = lazy(() =>
   import('./BudgetSpellbookDemo').then((m) => ({ default: m.BudgetSpellbookDemo })),
 );
 
+const CalendarSpellbookDemo = lazy(() =>
+  import('./CalendarSpellbookDemo').then((m) => ({ default: m.CalendarSpellbookDemo })),
+);
+
 /* ── Abstract diagram per tab ─────────────────────────── */
 interface NodeDef {
   x: number;
@@ -223,6 +227,10 @@ export function TabsSection() {
             ) : tab.id === 'budgets' ? (
               <Suspense fallback={<TabDiagram tabId="budgets" />}>
                 <BudgetSpellbookDemo />
+              </Suspense>
+            ) : tab.id === 'calendar' ? (
+              <Suspense fallback={<TabDiagram tabId="calendar" />}>
+                <CalendarSpellbookDemo />
               </Suspense>
             ) : (
               <TabDiagram tabId={tab.id} />

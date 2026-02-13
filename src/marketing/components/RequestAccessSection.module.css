@@ -108,7 +108,7 @@
 }
 
 .cardContent {
-  padding: var(--space-xl);
+  padding: var(--space-lg);
 }
 
 @media (min-width: 640px) {
