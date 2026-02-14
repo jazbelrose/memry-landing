@@ -239,9 +239,9 @@ export function SlidesScene() {
       <motion.rect
         variants={cursorDrift(1.2, 0, 0)}
         x={canvasX + 26}
-        y={CY + 235}
-        width={180}
-        height={36}
+        y={CY + 223}
+        width={165}
+        height={48}
         rx={3}
         fill="rgba(45,156,219,0.12)"
         stroke="rgba(45,156,219,0.3)"
