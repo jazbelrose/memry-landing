@@ -1,8 +1,8 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ComponentType } from 'react';
 import { Unlink, AlertTriangle, Unplug, Presentation, Calculator, CheckSquare, CalendarDays, BookOpen, FolderUp } from 'lucide-react';
 
 interface IconProps {
-  size?: number;
+  size?: number | string;
   className?: string;
   style?: CSSProperties;
 }
@@ -85,7 +85,7 @@ export const DisconnectIcon = Unplug;
 
 /* ── Icon lookup for feature grid ─────────────────────── */
 
-const iconMap: Record<string, (props: IconProps) => JSX.Element> = {
+const iconMap: Record<string, ComponentType<IconProps>> = {
   spellbook: SpellbookIcon,
   slides: SlidesIcon,
   budget: BudgetIcon,

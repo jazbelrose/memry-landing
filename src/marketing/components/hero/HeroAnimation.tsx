@@ -4,7 +4,6 @@
    ═══════════════════════════════════════════════════════════ */
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { Layers, Receipt, Landmark, Users, MessageSquare, Bell } from 'lucide-react';
 import {
   C, FONT, VW, VH, SB_W,
   EASE, SCENES, SceneId, SCENE_DURATION, SCENE_NAV, NAV_Y,
@@ -126,73 +125,56 @@ export function HeroAnimation() {
             <g key={i} opacity={op}>
               {/* 0: Layers */}
               {i === 0 && (
-                <Layers
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/>
+                  <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/>
+                  <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>
+                </g>
               )}
               {/* 1: HQ — bold "HQ" text */}
               {i === 1 && (
                 <text x={ix + 3} y={iy + 15} fill={ic} fontSize={10} fontWeight={700} fontFamily={FONT}>HQ</text>
               )}
-              {/* 2: Docs */}
+              {/* 2: Receipt */}
               {i === 2 && (
-                <Receipt
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/>
+                  <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/>
+                  <path d="M12 17.5v-11"/>
+                </g>
               )}
-              {/* 3: Building */}
+              {/* 3: Landmark */}
               {i === 3 && (
-                <Landmark
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/>
+                  <path d="M6 18v-7"/>
+                  <path d="M10 18v-7"/>
+                  <path d="M14 18v-7"/>
+                  <path d="M18 18v-7"/>
+                  <path d="M3 22h18"/>
+                </g>
               )}
-              {/* 4: People */}
+              {/* 4: Users */}
               {i === 4 && (
-                <Users
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M16 3.128a4 4 0 0 1 0 7.744"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                </g>
               )}
-              {/* 5: Chat */}
+              {/* 5: MessageSquare */}
               {i === 5 && (
-                <MessageSquare
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>
+                </g>
               )}
               {/* 6: Bell */}
               {i === 6 && (
-                <Bell
-                  x={ix + 2}
-                  y={iy + 2}
-                  width={16}
-                  height={16}
-                  color={ic}
-                  strokeWidth={1.6}
-                />
+                <g transform={`translate(${ix + 2},${iy + 2}) scale(0.667)`} stroke={ic} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M10.268 21a2 2 0 0 0 3.464 0"/>
+                  <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>
+                </g>
               )}
             </g>
           );

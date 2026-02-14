@@ -646,18 +646,69 @@ export function MagicLayoutDemo() {
           {/* Background */}
           <rect width={W} height={H} fill={C.bg} rx={12} />
 
-          {/* ── Left sidebar icons ── */}
+          {/* ── Left sidebar ── */}
           <rect x={0} y={0} width={40} height={H} fill={C.sidebar} />
-          {/* Nav icons (small circles) */}
-          {[60, 100, 140, 180, 220, 270, 310].map((yy, i) => (
-            <circle key={i} cx={20} cy={yy} r={10}
-              fill={i === 2 ? C.accentDim : C.white05}
-              stroke={i === 2 ? C.accent : 'none'}
-              strokeWidth={i === 2 ? 0.5 : 0}
-            />
-          ))}
-          {/* Active icon highlight */}
-          <rect x={0} y={130} width={3} height={20} rx={1.5} fill={C.accent} />
+          <line x1={40} y1={0} x2={40} y2={H} stroke={C.border} strokeWidth={1} />
+          {/* memry logo */}
+          <g transform="translate(6,8) scale(0.155)" opacity={0.85}>
+            <path d="M167.4,111c1.2,2.2 1.8,4.6 1.8,7.2c0,5.1-2.6,9.9-6.8,12.7l-61.2,40.7c-7,4.7-16.2,4.7-23.2,0l-61.2-40.7c-4.3-2.8-6.8-7.6-6.8-12.7c0-2.5.6-5 1.8-7.2c1.2,2.2 2.9,4.2 5.1,5.6l61.2,40.7c7,4.7 16.2,4.7 23.2,0l61.2-40.7c2.2-1.4 3.9-3.4 5.1-5.6Z" fill="#fff"/>
+            <path d="M167.4,82.4c1.2,2.2 1.8,4.6 1.8,7.2c0,5.1-2.6,9.9-6.8,12.7l-61.2,40.7c-7,4.7-16.2,4.7-23.2,0l-61.2-40.7c-4.3-2.8-6.8-7.6-6.8-12.7c0-2.5.6-5 1.8-7.2c1.2,2.2 2.9,4.2 5.1,5.6l61.1,40.6c7.1,4.7 16.4,4.7 23.5,0l61.1-40.6c2.2-1.4 3.9-3.4 5.1-5.6Z" fill="#fff"/>
+            <path d="M76,8.7c8.2-5.5 18.9-5.5 27.1,0l59.3,39.4c4.3,2.8 6.8,7.6 6.8,12.7c0,5.1-2.6,9.9-6.8,12.7l-59.3,39.4c-8.2,5.5-18.9,5.5-27.1,0l-59.3-39.4c-4.3-2.8-6.8-7.6-6.8-12.7c0-5.1 2.6-9.9 6.8-12.7l59.3-39.4Zm16.7,38.8l-.7.6-24.7,16.6c-4.1,2.7-4.5,6.8-1.2,9c3.4,2.2 9.5,1.8 13.6-.9l24.8-16.7.8-.5c1.6-.8 3.1-.9 3.4-.9c.3,0 2.4-.2 3.9.8l0,0c2,1.3 1.7,3.8-.7,5.4l-24.8,16.7c-4.1,2.8-4.5,6.9-1.2,9.1c3.4,2.2 9.6,1.8 13.7-.9l24.8-16.7c10.6-7.1 11.9-17.7 2.9-23.4c-5.6-3.6-12.8-3.7-14-3.7c-.1-.9-.4-5.5-5.9-9.1c-3.4-2.2-9.3-4.1-17.1-3.6c-10.3.7-17,5.2-18.2,6l-24.6,16.6c-4.1,2.7-4.5,6.8-1.2,9c3.4,2.2 9.5,1.8 13.6-.9l24.7-16.6c1.8-1.2 3.8-1.4 4.2-1.4c.3,0 2.4-.2 3.9.8l0,0c1.8,1.1 1.7,3.3 0,4.8Z" fill="#fff"/>
+          </g>
+          {/* + create button */}
+          <rect x={4} y={56} width={32} height={36} rx={10} fill={C.accent} />
+          <line x1={20} y1={65} x2={20} y2={83} stroke="#fff" strokeWidth={2} strokeLinecap="round" />
+          <line x1={12} y1={74} x2={28} y2={74} stroke="#fff" strokeWidth={2} strokeLinecap="round" />
+          {/* Nav icons */}
+          {[{y:130,i:0},{y:178,i:1},{y:226,i:2},{y:274,i:3},{y:322,i:4},{y:392,i:5},{y:440,i:6}].map(({y: yy, i}) => {
+            const isActive = false;
+            const iconColor = isActive ? C.accent : C.textMuted;
+            const iconOp = isActive ? 0.9 : 0.35;
+            return (
+              <g key={i}>
+                <rect
+                  x={6} y={yy - 14} width={28} height={28} rx={8}
+                  fill={isActive ? C.accentDim : C.white05}
+                  stroke={isActive ? C.accent : 'none'}
+                  strokeWidth={isActive ? 0.5 : 0}
+                />
+                {isActive && <rect x={0} y={yy - 8} width={3} height={16} rx={1.5} fill={C.accent} />}
+                {i === 1 ? (
+                  <text x={12} y={yy + 4} fill={iconColor} fontSize={10} fontWeight={700} fontFamily={FONT} opacity={iconOp}>HQ</text>
+                ) : (
+                  <g transform={`translate(12,${yy - 8}) scale(0.667)`} stroke={iconColor} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round" opacity={iconOp}>
+                    {i === 0 && (<><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></>)}
+                    {i === 2 && (<><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></>)}
+                    {i === 3 && (<><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/></>)}
+                    {i === 4 && (<><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx={9} cy={7} r={4}/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></>)}
+                    {i === 5 && (<path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/>)}
+                    {i === 6 && (<><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></>)}
+                  </g>
+                )}
+              </g>
+            );
+          })}
+          {/* Notification badges */}
+          <circle cx={34} cy={382} r={6} fill={C.accent} />
+          <text x={34} y={384.5} fill="#fff" fontSize={7} fontFamily={FONT} textAnchor="middle" fontWeight={700}>13</text>
+          <circle cx={34} cy={430} r={4} fill={C.accent} />
+          {/* Search */}
+          <g opacity={0.3}>
+            <rect x={6} y={H - 180} width={28} height={28} rx={8} fill={C.white05} />
+            <g transform={`translate(12,${H - 174}) scale(0.667)`} stroke={C.textMuted} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx={11} cy={11} r={8}/><path d="m21 21-4.3-4.3"/>
+            </g>
+          </g>
+          {/* Log-out arrow */}
+          <g opacity={0.3}>
+            <rect x={6} y={H - 120} width={28} height={28} rx={8} fill={C.white05} />
+            <g transform={`translate(12,${H - 114}) scale(0.667)`} stroke={C.textMuted} strokeWidth={1.6} fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+            </g>
+          </g>
+          {/* Avatar */}
+          <circle cx={20} cy={H - 55} r={14} fill={C.card} stroke={C.border} strokeWidth={0.5} />
+          <text x={20} y={H - 51} fill={C.textMuted} fontSize={9} fontWeight={600} fontFamily={FONT} textAnchor="middle">JR</text>
 
           {/* ── Project header ── */}
           <text x={RAIL_X + 30} y={28} fill={C.text} fontSize={12} fontWeight={600} fontFamily={FONT}>
