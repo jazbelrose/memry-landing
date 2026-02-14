@@ -150,7 +150,6 @@
   gap: var(--space-sm);
   padding-left: var(--space-md);
   position: relative;
-  -webkit-font-smoothing: antialiased;
 }
 
 .checklistItem::before {
@@ -160,7 +159,6 @@
   color: var(--brand);
   font-weight: bold;
   flex-shrink: 0;
-  -webkit-font-smoothing: antialiased;
 }
 
 @media (max-width: 768px) {
@@ -170,36 +168,5 @@
 
   .checklistGrid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .checklistSection {
-    padding: var(--space-lg);
-  }
-
-  .checklistTitle {
-    font-size: 18px;
-    margin-bottom: var(--space-lg);
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    gap: var(--space-md);
-  }
-
-  .checklistSection {
-    padding: var(--space-md);
-    margin-top: var(--space-lg);
-  }
-
-  .checklistTitle {
-    font-size: 16px;
-    margin-bottom: var(--space-md);
-  }
-
-  .checklistItem {
-    font-size: 13px;
   }
 }

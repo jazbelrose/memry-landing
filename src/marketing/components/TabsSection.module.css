@@ -98,14 +98,12 @@
   color: var(--text-secondary);
   padding-left: 16px;
   position: relative;
-  -webkit-font-smoothing: antialiased;
 }
 .panelFeatures li::before {
   content: '\2022';
   position: absolute;
   left: 0;
   color: var(--brand);
-  -webkit-font-smoothing: antialiased;
 }
 
 .panelDiagram {
@@ -128,36 +126,5 @@
     justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 4px;
-  }
-}
-
-@media (max-width: 640px) {
-  .panel {
-    padding: var(--space-lg);
-    min-height: auto;
-  }
-
-  .panelHeadline {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .panel {
-    padding: var(--space-md);
-    gap: var(--space-md);
-  }
-
-  .panelHeadline {
-    font-size: 16px;
-  }
-
-  .panelBody {
-    font-size: 13px;
-  }
-
-  .panelFeatures li {
-    font-size: 12px;
-    padding-left: 14px;
   }
 }
