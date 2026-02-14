@@ -109,3 +109,30 @@
     font-size: 13px;
   }
 }
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--space-lg) var(--space-lg) var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-lg) var(--space-md) var(--space-lg);
+  }
+
+  .faqQuestion {
+    font-size: 14px;
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .faqAnswer {
+    padding: 0 var(--space-md) var(--space-sm);
+  }
+
+  .faqAnswer p {
+    font-size: 13px;
+    margin-top: var(--space-sm);
+  }
+}

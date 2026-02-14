@@ -82,13 +82,13 @@
   color: var(--text-secondary);
   line-height: 1.6;
   padding-left: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 .featureItem::before {
-  content: '▪';
+  content: '\2022';
   flex-shrink: 0;
   color: var(--brand);
-  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
@@ -110,5 +110,34 @@
 
   .featureItem {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--space-lg) var(--space-lg) var(--space-lg);
+  }
+
+  .featureBox {
+    padding: var(--space-lg) var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-lg) var(--space-md) var(--space-lg);
+  }
+
+  .heading {
+    font-size: clamp(20px, 3vw, 28px);
+  }
+
+  .featureBox {
+    padding: var(--space-md);
+  }
+
+  .featureItem {
+    font-size: 13px;
+    gap: var(--space-sm);
   }
 }

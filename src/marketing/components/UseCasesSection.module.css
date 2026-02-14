@@ -99,13 +99,13 @@
   display: flex;
   align-items: flex-start;
   gap: var(--space-sm);
+  -webkit-font-smoothing: antialiased;
 }
 
 .listItem::before {
-  content: '▪';
+  content: '\2022';
   flex-shrink: 0;
   color: var(--brand);
-  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
@@ -121,5 +121,22 @@
   .iconWrap {
     width: 40px;
     height: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardContent {
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .cardContent {
+    gap: var(--space-sm);
+  }
+
+  .listItem {
+    font-size: 12px;
+    gap: var(--space-xs);
   }
 }
